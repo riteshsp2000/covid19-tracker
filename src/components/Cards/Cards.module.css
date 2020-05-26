@@ -17,3 +17,9 @@
 .deaths {
   border-bottom: 10px solid rgba(255, 0, 0, 0.5);
 }
+
+.infected,
+.recovered,
+.deaths {
+  box-shadow: 5px 15px 35px 5px rgba(50, 88, 130, 0.32) !important;
+}
