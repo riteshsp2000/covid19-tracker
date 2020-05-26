@@ -4,7 +4,7 @@ import { Line, Bar } from 'react-chartjs-2';
 import { fetchDailyData } from '../../api';
 import styles from './Chart.module.css';
 
-const Chart = () => {
+const Chart = ({ data, country }) => {
   const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
@@ -36,6 +36,18 @@ const Chart = () => {
             fill: true,
           },
         ],
+      }}
+    />
+  ) : null;
+
+  const barChart = data.confirmed ? (
+    <Bar
+      data={{
+        labels: ['Infected', 'Recovered', 'Deaths'],
+      }}
+      options={{
+        legend: { display: false },
+        title: { display: true, text: `Current state in ${country}` },
       }}
     />
   ) : null;

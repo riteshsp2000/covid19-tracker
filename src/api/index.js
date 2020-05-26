@@ -8,10 +8,11 @@ export const fetchData = async (country) => {
   if (country) {
     variableURL = `${url}/countries/${country}`;
   }
+
   try {
     const {
       data: { confirmed, recovered, deaths, lastUpdate },
-    } = await axios.get(url);
+    } = await axios.get(variableURL);
 
     return { confirmed, recovered, deaths, lastUpdate };
   } catch (error) {
