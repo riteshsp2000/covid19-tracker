@@ -10,7 +10,6 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     return <div>Loading...</div>;
   }
 
-  console.log(recovered);
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify='center'>

@@ -13,3 +13,7 @@ body {
   margin: 0 6rem !important;
   margin-top: 2rem !important;
 }
+
+.chevron {
+  cursor: pointer;
+}
