@@ -10,6 +10,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     return <div>Loading...</div>;
   }
 
+  console.log(recovered);
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify='center'>
@@ -21,7 +22,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           className={cs(styles.card, styles.infected)}
         >
           <CardContent>
-            <Typography color='textSecondary' gutterBottom>
+            <Typography color='textSecondary' gutterBottom={true}>
               Infected
             </Typography>
             <Typography variant='h5'>
@@ -32,7 +33,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 separator=','
               />
             </Typography>
-            <Typography color='textSecondary'>
+            <Typography color='textSecondary' gutterBottom={true}>
               {new Date(lastUpdate).toDateString()}
             </Typography>
             <Typography variant='body2'>
@@ -49,7 +50,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           className={cs(styles.card, styles.recovered)}
         >
           <CardContent>
-            <Typography color='textSecondary' gutterBottom>
+            <Typography color='textSecondary' gutterBottom={true}>
               Recovered
             </Typography>
             <Typography variant='h5'>
@@ -60,7 +61,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 separator=','
               />
             </Typography>
-            <Typography color='textSecondary'>
+            <Typography color='textSecondary' gutterBottom={true}>
               {new Date(lastUpdate).toDateString()}
             </Typography>
             <Typography variant='body2'>
@@ -76,7 +77,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           className={cs(styles.card, styles.deaths)}
         >
           <CardContent>
-            <Typography color='textSecondary' gutterBottom>
+            <Typography color='textSecondary' gutterBottom={true}>
               Deaths
             </Typography>
             <Typography variant='h5'>
@@ -87,7 +88,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 separator=','
               />
             </Typography>
-            <Typography color='textSecondary'>
+            <Typography color='textSecondary' gutterBottom={true}>
               {new Date(lastUpdate).toDateString()}
             </Typography>
             <Typography variant='body2'>

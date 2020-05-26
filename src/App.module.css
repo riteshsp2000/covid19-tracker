@@ -11,4 +11,5 @@ body {
   justify-content: center;
   flex-direction: column;
   margin: 0 6rem !important;
+  margin-top: 2rem !important;
 }

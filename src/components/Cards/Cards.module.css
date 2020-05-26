@@ -1,5 +1,5 @@
 .container {
-  margin: 50px, 0;
+  margin: 3rem 0 !important;
 }
 
 .card {
@@ -23,4 +23,10 @@
 .deaths {
   box-shadow: 5px 15px 35px 5px rgba(50, 88, 130, 0.32) !important;
   margin: 10px !important;
+  border-radius: 15px !important;
+}
+
+.MuiTypography-h6 {
+  text-align: center;
+  color: blue;
 }
