@@ -16,3 +16,11 @@
   margin: auto 1rem;
   color: #fff;
 }
+
+.box h5 {
+  margin: 10px;
+}
+
+.quote h5 {
+  text-align: right;
+}
