@@ -3,7 +3,7 @@ import styles from './App.module.css';
 import cx from 'classnames';
 import { Link } from 'react-scroll';
 
-import { Cards, Chart, CountryPicker, IntroCard } from './components';
+import { Cards, Chart, CountryPicker, IntroCard, Footer } from './components';
 import { fetchData } from './api';
 
 class App extends React.Component {
@@ -42,6 +42,7 @@ class App extends React.Component {
         </Link>
         <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Chart data={data} country={country} />
+        <Footer />
       </div>
     );
   }
