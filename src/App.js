@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './App.module.css';
 import cx from 'classnames';
-import { Link } from 'react-scroll';
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 import { Cards, Chart, CountryPicker, IntroCard, Footer } from './components';
 import { fetchData } from './api';
@@ -30,6 +30,10 @@ class App extends React.Component {
     }
   };
 
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   render() {
     const { data, country } = this.state;
     return (
@@ -52,7 +56,7 @@ class App extends React.Component {
           <CountryPicker handleCountryChange={this.handleCountryChange} />
           <Chart data={data} country={country} />
         </div>
-        <Footer />
+        <Footer scrollToTop={this.scrollToTop} />
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Footer.module.css';
 import cx from 'classnames';
 
-const Footer = () => {
+const Footer = ({ scrollToTop }) => {
   return (
     <div className={styles.container}>
       <div className={cx(styles.box, styles.quote)}>
@@ -24,6 +24,10 @@ const Footer = () => {
         <h5>Say Hello</h5>
         <h5>riteshp2000.gmail.com</h5>
       </div>
+      <i
+        onClick={() => scrollToTop()}
+        className={cx(styles.top, 'fas fa-chevron-circle-up fa-2x')}
+      ></i>
     </div>
   );
 };

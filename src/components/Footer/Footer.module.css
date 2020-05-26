@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  position: relative;
 }
 
 .box {
@@ -23,4 +24,11 @@
 
 .quote h5 {
   text-align: right;
+}
+
+.top {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  cursor: pointer;
 }
