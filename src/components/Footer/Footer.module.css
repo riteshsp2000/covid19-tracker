@@ -32,3 +32,17 @@
   bottom: 10%;
   cursor: pointer;
 }
+
+@media (max-width: 770px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .quote h5,
+  .hello h5 {
+    text-align: center;
+  }
+}
