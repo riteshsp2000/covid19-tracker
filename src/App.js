@@ -27,21 +27,25 @@ class App extends React.Component {
   render() {
     const { data, country } = this.state;
     return (
-      <div className={styles.container}>
-        <IntroCard />
-        <Cards data={data} />
-        <Link
-          activeClass='active'
-          to='countryPicker'
-          spy={true}
-          offset={-70}
-          duration={500}
-          smooth={true}
-        >
-          <i className={cx(`fas fa-chevron-down fa-2x ${styles.chevron}`)}></i>
-        </Link>
-        <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Chart data={data} country={country} />
+      <div>
+        <div className={styles.container}>
+          <IntroCard />
+          <Cards data={data} />
+          <Link
+            activeClass='active'
+            to='countryPicker'
+            spy={true}
+            offset={-70}
+            duration={500}
+            smooth={true}
+          >
+            <i
+              className={cx(`fas fa-chevron-down fa-2x ${styles.chevron}`)}
+            ></i>
+          </Link>
+          <CountryPicker handleCountryChange={this.handleCountryChange} />
+          <Chart data={data} country={country} />
+        </div>
         <Footer />
       </div>
     );

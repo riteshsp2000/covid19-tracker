@@ -1,6 +1,18 @@
 .container {
-  height: 2rem;
-  /* width: 100vh; */
+  height: 15rem;
   background-color: #0f0f0f;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.box {
+  margin: auto 3rem;
+}
+
+.fas {
+  margin: auto 1rem;
   color: #fff;
 }
