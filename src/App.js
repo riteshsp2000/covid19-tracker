@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './App.module.css';
 
 import { Cards, Chart, CountryPicker, IntroCard } from './components';
 import { fetchData } from './api';
@@ -24,7 +25,7 @@ class App extends React.Component {
   render() {
     const { data, country } = this.state;
     return (
-      <div className='ui container'>
+      <div className={styles.container}>
         <IntroCard />
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />

@@ -18,7 +18,10 @@ const IntroCard = () => {
         </p>
       </div>
       <div className={styles.imgDiv}>
-        <img src='../../img/distancing.png' alt='Social Distancing' />
+        <img
+          src={require('../../img/distancing.png')}
+          alt='Social Distancing'
+        />
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
 
 body {
-  background-color: rgb(250, 250, 250);
-  font-family: 'Roboto', serif;
+  background-color: rgba(250, 246, 239, 0.623);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -10,4 +10,5 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 6rem !important;
 }
