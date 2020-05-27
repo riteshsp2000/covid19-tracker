@@ -6,6 +6,7 @@ import Line from '../Graphs/Line';
 import MyResponsiveBar from '../Graphs/Bar';
 
 const Chart = ({ data, country }) => {
+  // Declaration of dailyData hook and initializing on page load to fetch Graph Data
   const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
@@ -15,13 +16,17 @@ const Chart = ({ data, country }) => {
 
     fetchAPI();
   }, []);
+  // ================================================================================
 
+  // Declaring a Line Chart with appropriate Data
   const lineChart = data.confirmed ? (
     <div className={styles.displayGraph}>
       <Line dataFeed={dailyData} />
     </div>
   ) : null;
+  // ================================================================================
 
+  // Extracting the bar data to appropriate type and declaring the bar graph Function
   const barData = data.confirmed
     ? [
         {
@@ -47,7 +52,9 @@ const Chart = ({ data, country }) => {
       <MyResponsiveBar dataFeed={barData} country={country} />
     </div>
   ) : null;
+  // ================================================================================
 
+  // Rendering the JSX depending upon the country preferences
   return (
     <div className={styles.container}>{country ? barChart : lineChart}</div>
   );

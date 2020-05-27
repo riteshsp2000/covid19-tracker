@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const url = 'https://covid19.mathdro.id/api';
 
+// Defining a function to fetch the Cards Data as well as individual country Data
 export const fetchData = async (country) => {
   let variableURL = url;
 
@@ -20,6 +21,7 @@ export const fetchData = async (country) => {
   }
 };
 
+// Defining a function to fetch the daily Data for the global graph and then modifing the data to return in the appropriate form
 export const fetchDailyData = async () => {
   try {
     const { data } = await axios.get(`${url}/daily`);
@@ -73,6 +75,7 @@ export const fetchDailyData = async () => {
   }
 };
 
+// Defining a function to fetch a list of countries
 export const fetchedCountriesList = async () => {
   try {
     const {
