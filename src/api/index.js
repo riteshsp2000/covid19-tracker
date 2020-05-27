@@ -30,7 +30,44 @@ export const fetchDailyData = async () => {
       date: dailyData.reportDate,
     }));
 
-    return modifiedData;
+    const date = modifiedData
+      .map(({ date }) => date)
+      .filter((_, i) => !(i % 4));
+    const confirmed = modifiedData
+      .map(({ confirmed }) => confirmed)
+      .filter((_, i) => !(i % 4));
+    const deaths = modifiedData
+      .map(({ deaths }) => deaths)
+      .filter((_, i) => !(i % 4));
+
+    const finalDataConfirmed = confirmed.map((confirmed, index) => {
+      return {
+        x: date[index],
+        y: confirmed,
+      };
+    });
+
+    const finalDataDeaths = deaths.map((deaths, index) => {
+      return {
+        x: date[index],
+        y: deaths,
+      };
+    });
+
+    const dataFinalFeed = [
+      {
+        id: 'Confirmed',
+        color: 'hsl(273, 70%, 50%)',
+        data: finalDataConfirmed,
+      },
+      {
+        id: 'Deaths',
+        color: 'hsl(127, 70%, 50%)',
+        data: finalDataDeaths,
+      },
+    ];
+
+    return dataFinalFeed;
   } catch (error) {
     console.log(error);
   }
