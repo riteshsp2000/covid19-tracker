@@ -26,7 +26,6 @@
   border-radius: 15px !important;
 }
 
-.MuiTypography-h6 {
-  text-align: center;
-  color: blue;
+.loader {
+  height: 10rem;
 }
