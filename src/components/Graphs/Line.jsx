@@ -28,7 +28,7 @@ const Line = ({ dataFeed }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 45,
-        legend: 'Date',
+        legend: '',
         legendOffset: 80,
         legendPosition: 'middle',
       }}
@@ -37,11 +37,11 @@ const Line = ({ dataFeed }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: 'count',
+        legend: '',
         legendOffset: -80,
         legendPosition: 'middle',
       }}
-      colors={{ scheme: 'set2' }}
+      colors={{ scheme: 'paired' }}
       lineWidth={3}
       pointSize={10}
       pointColor={{ theme: 'background' }}

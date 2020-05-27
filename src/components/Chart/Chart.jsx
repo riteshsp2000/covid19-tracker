@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Bar } from 'react-chartjs-2';
 
 import { fetchDailyData } from '../../api';
 import styles from './Chart.module.css';
 import Line from '../Graphs/Line';
+import MyResponsiveBar from '../Graphs/Bar';
 
 const Chart = ({ data, country }) => {
   const [dailyData, setDailyData] = useState([]);
@@ -22,31 +22,30 @@ const Chart = ({ data, country }) => {
     </div>
   ) : null;
 
+  const barData = data.confirmed
+    ? [
+        {
+          type: 'Infected',
+          count: data.confirmed.value,
+          'hot dogColor': 'hsl(101, 70%, 50%)',
+        },
+        {
+          type: 'Deaths',
+          count: data.deaths.value,
+          'hot dogColor': 'hsl(101, 70%, 50%)',
+        },
+        {
+          type: 'Recovered',
+          count: data.recovered.value,
+          'hot dogColor': 'hsl(101, 70%, 50%)',
+        },
+      ]
+    : null;
+
   const barChart = data.confirmed ? (
-    <Bar
-      data={{
-        labels: ['Infected', 'Recovered', 'Deaths'],
-        datasets: [
-          {
-            label: 'People',
-            backgroundColor: [
-              'rgba(0, 0, 255, 0.5',
-              'rgba(0, 255, 0, 0.5',
-              'rgba(255, 0, 0, 0.5',
-            ],
-            data: [
-              data.confirmed.value,
-              data.recovered.value,
-              data.deaths.value,
-            ],
-          },
-        ],
-      }}
-      options={{
-        legend: { display: false },
-        title: { display: true, text: `Current state in ${country}` },
-      }}
-    />
+    <div className={styles.displayGraph}>
+      <MyResponsiveBar dataFeed={barData} country={country} />
+    </div>
   ) : null;
 
   return (
