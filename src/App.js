@@ -12,12 +12,14 @@ class App extends React.Component {
     country: '',
   };
 
+  // Fetching the appropriate data on initial Load
   async componentDidMount() {
     const fetchedData = await fetchData();
 
     this.setState({ data: fetchedData });
   }
 
+  // Handler to manage and update the country when selected
   handleCountryChange = async (country) => {
     if (country === 'global') {
       const fetchedData = await fetchData();
@@ -30,10 +32,12 @@ class App extends React.Component {
     }
   };
 
+  // Function to scroll to the top
   scrollToTop = () => {
     scroll.scrollToTop();
   };
 
+  // Rendering the final data
   render() {
     const { data, country } = this.state;
     return (

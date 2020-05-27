@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Line, Bar } from 'react-chartjs-2';
 
 import { fetchDailyData } from '../../api';
 import styles from './Chart.module.css';
+import Line from '../Graphs/Line';
+import MyResponsiveBar from '../Graphs/Bar';
 
 const Chart = ({ data, country }) => {
+  // Declaration of dailyData hook and initializing on page load to fetch Graph Data
   const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
@@ -12,61 +14,47 @@ const Chart = ({ data, country }) => {
       setDailyData(await fetchDailyData());
     };
 
-    // console.log(dailyData);
     fetchAPI();
   }, []);
+  // ================================================================================
 
-  const lineChart = dailyData.length ? (
-    <Line
-      data={{
-        labels: dailyData.map(({ date }) => date),
-        datasets: [
-          {
-            data: dailyData.map(({ deaths }) => deaths),
-            label: 'Deaths',
-            borderColor: 'red',
-            backgroundColor: 'rgba(255, 0, 0, 0.5)',
-            fill: true,
-          },
-          {
-            data: dailyData.map(({ confirmed }) => confirmed),
-            label: 'Deaths',
-            borderColor: 'blue',
-            backgroundColor: 'rgba(0, 0, 255, 0.5)',
-            fill: true,
-          },
-        ],
-      }}
-    />
+  // Declaring a Line Chart with appropriate Data
+  const lineChart = data.confirmed ? (
+    <div className={styles.displayGraph}>
+      <Line dataFeed={dailyData} />
+    </div>
   ) : null;
+  // ================================================================================
+
+  // Extracting the bar data to appropriate type and declaring the bar graph Function
+  const barData = data.confirmed
+    ? [
+        {
+          type: 'Infected',
+          count: data.confirmed.value,
+          'hot dogColor': 'hsl(101, 70%, 50%)',
+        },
+        {
+          type: 'Deaths',
+          count: data.deaths.value,
+          'hot dogColor': 'hsl(101, 70%, 50%)',
+        },
+        {
+          type: 'Recovered',
+          count: data.recovered.value,
+          'hot dogColor': 'hsl(101, 70%, 50%)',
+        },
+      ]
+    : null;
 
   const barChart = data.confirmed ? (
-    <Bar
-      data={{
-        labels: ['Infected', 'Recovered', 'Deaths'],
-        datasets: [
-          {
-            label: 'People',
-            backgroundColor: [
-              'rgba(0, 0, 255, 0.5',
-              'rgba(0, 255, 0, 0.5',
-              'rgba(255, 0, 0, 0.5',
-            ],
-            data: [
-              data.confirmed.value,
-              data.recovered.value,
-              data.deaths.value,
-            ],
-          },
-        ],
-      }}
-      options={{
-        legend: { display: false },
-        title: { display: true, text: `Current state in ${country}` },
-      }}
-    />
+    <div className={styles.displayGraph}>
+      <MyResponsiveBar dataFeed={barData} country={country} />
+    </div>
   ) : null;
+  // ================================================================================
 
+  // Rendering the JSX depending upon the country preferences
   return (
     <div className={styles.container}>{country ? barChart : lineChart}</div>
   );

@@ -11,3 +11,11 @@
     width: 100%;
   }
 }
+
+.displayGraph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40rem;
+  width: 100%;
+}
