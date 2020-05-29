@@ -46,6 +46,10 @@ li {
   color: #2f4f4f;
 }
 
+.menu {
+  display: hidden;
+}
+
 @media screen and (max-width: 480px) {
   .headerContainer {
     display: flex;
@@ -60,7 +64,7 @@ li {
     display: none;
   }
 
-  .ulHeaderMobileShow {
+  .ulHeaderExpand {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
@@ -75,5 +79,20 @@ li {
   .headerImage {
     width: 100%;
     margin: auto;
+  }
+
+  .menu {
+    position: absolute;
+    top: 1rem;
+    right: 5%;
+    color: #fff;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    background-color: #71c6e6;
+  }
+
+  .menu:hover {
+    cursor: pointer;
   }
 }
