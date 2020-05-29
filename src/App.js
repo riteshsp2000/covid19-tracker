@@ -1,69 +1,38 @@
 import React from 'react';
-import styles from './App.module.css';
-import cx from 'classnames';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { animateScroll as scroll } from 'react-scroll';
 
-import { Cards, Chart, CountryPicker, IntroCard, Footer } from './components';
-import { fetchData } from './api';
+import Global from './components/Global';
+import India from './components/India';
+import IndianStates from './components/IndianStates';
 
-class App extends React.Component {
-  state = {
-    data: {},
-    country: '',
-  };
+import Header from './components/marginals/Header';
+import Footer from './components/marginals/Footer';
 
-  // Fetching the appropriate data on initial Load
-  async componentDidMount() {
-    const fetchedData = await fetchData();
-
-    this.setState({ data: fetchedData });
-  }
-
-  // Handler to manage and update the country when selected
-  handleCountryChange = async (country) => {
-    if (country === 'global') {
-      const fetchedData = await fetchData();
-
-      this.setState({ data: fetchedData, country: '' });
-    } else {
-      const countryData = await fetchData(country);
-
-      this.setState({ data: countryData, country: country });
-    }
-  };
-
+const App = () => {
   // Function to scroll to the top
-  scrollToTop = () => {
+  const scrollToTop = () => {
     scroll.scrollToTop();
   };
 
-  // Rendering the final data
-  render() {
-    const { data, country } = this.state;
-    return (
-      <div>
-        <div className={styles.container}>
-          <IntroCard />
-          <Cards data={data} />
-          <Link
-            activeClass='active'
-            to='countryPicker'
-            spy={true}
-            offset={-70}
-            duration={500}
-            smooth={true}
-          >
-            <i
-              className={cx(`fas fa-chevron-down fa-2x ${styles.chevron}`)}
-            ></i>
-          </Link>
-          <CountryPicker handleCountryChange={this.handleCountryChange} />
-          <Chart data={data} country={country} />
-        </div>
-        <Footer scrollToTop={this.scrollToTop} />
-      </div>
-    );
-  }
-}
+  return (
+    <BrowserRouter>
+      <Header />
+      <Switch>
+        <Route path='/' exact>
+          <Global />
+        </Route>
+        <Route path='/india' exact>
+          <India />
+        </Route>
+        <Route path='/indianStates' exact>
+          <IndianStates />
+        </Route>
+        <Redirect to='/' />
+      </Switch>
+      <Footer scrollToTop={scrollToTop} />
+    </BrowserRouter>
+  );
+};
 
 export default App;
