@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import cx from 'classnames';
 
 import styles from '../../css/Header.module.css';
 import image from '../../img/title-image.png';

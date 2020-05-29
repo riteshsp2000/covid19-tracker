@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../css/Global.module.css';
-import cx from 'classnames';
 
 import { Cards, Chart, CountryPicker, IntroCard } from './global/index';
 import { fetchData } from '../api';
