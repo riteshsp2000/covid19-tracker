@@ -47,7 +47,7 @@ li {
 }
 
 .menu {
-  display: hidden;
+  display: none;
 }
 
 @media screen and (max-width: 480px) {
@@ -82,6 +82,7 @@ li {
   }
 
   .menu {
+    display: inline-block;
     position: absolute;
     top: 1rem;
     right: 5%;
