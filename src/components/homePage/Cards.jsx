@@ -5,7 +5,7 @@ import cs from 'classnames';
 import { css } from '@emotion/core';
 import FadeLoader from 'react-spinners/FadeLoader';
 
-import styles from './Cards.module.css';
+import styles from '../../css/Cards.module.css';
 
 const override = css`
   display: block;

@@ -3,7 +3,7 @@ import { NativeSelect, FormControl } from '@material-ui/core';
 
 import { fetchedCountriesList } from '../../api';
 
-import styles from './CountryPicker.module.css';
+import styles from '../../css/CountryPicker.module.css';
 
 const CountryPicker = ({ handleCountryChange }) => {
   const [fetchedCountries, setFetchedCountries] = useState([]);
