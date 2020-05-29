@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { fetchDailyData } from '../../api';
-import styles from './Chart.module.css';
+import styles from '../../css/Chart.module.css';
 import Line from '../Graphs/Line';
 import MyResponsiveBar from '../Graphs/Bar';
 
