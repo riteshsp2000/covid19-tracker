@@ -18,12 +18,41 @@ const Chart = ({ data, country }) => {
   }, []);
   // ================================================================================
 
+  // Following logic is written to calculate the number of ticks and tickvalues to be displayed in the graph
+
+  const calculateTicks = () => {
+    const confirmedObject = dailyData[0];
+    if (!confirmedObject) {
+      return null;
+    }
+
+    const confirmedArray = confirmedObject.data;
+    if (!confirmedArray) {
+      return null;
+    }
+
+    const ticks = confirmedArray.length;
+    const tickValues = confirmedArray
+      .map(({ x }) => x)
+      .filter((_, i) => !(i % 6));
+    return { ticks, tickValues };
+  };
+
+  const xValues = calculateTicks();
+
   // Declaring a Line Chart with appropriate Data
-  const lineChart = data.confirmed ? (
-    <div className={styles.displayGraph}>
-      <Line dataFeed={dailyData} />
-    </div>
-  ) : null;
+  const lineChart =
+    xValues != null ? (
+      <div className={styles.displayGraph}>
+        <Line
+          dataFeed={dailyData}
+          ticks={xValues.ticks}
+          tickValues={xValues.tickValues}
+          color={'paired'}
+        />
+      </div>
+    ) : null;
+
   // ================================================================================
 
   // Extracting the bar data to appropriate type and declaring the bar graph Function
