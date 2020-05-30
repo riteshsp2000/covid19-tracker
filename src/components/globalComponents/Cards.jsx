@@ -2,32 +2,13 @@ import React from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import CountUp from 'react-countup';
 import cs from 'classnames';
-import { css } from '@emotion/core';
-import FadeLoader from 'react-spinners/FadeLoader';
 
 import styles from '../../css/Cards.module.css';
-
-const override = css`
-  display: block;
-  margin: 0 auto;
-`;
+import Loader from '../utils/Loader';
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
-    return (
-      <div className={styles.loader}>
-        <FadeLoader
-          css={override}
-          size={150}
-          color={'#000000'}
-          loading={true}
-          radius={10}
-          height={30}
-          width={11}
-          margin={20}
-        />
-      </div>
-    );
+    return <Loader />;
   }
 
   return (
