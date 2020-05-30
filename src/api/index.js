@@ -32,15 +32,12 @@ export const fetchDailyData = async () => {
       date: dailyData.reportDate,
     }));
 
-    const date = modifiedData
-      .map(({ date }) => date)
-      .filter((_, i) => !(i % 4));
-    const confirmed = modifiedData
-      .map(({ confirmed }) => confirmed)
-      .filter((_, i) => !(i % 4));
-    const deaths = modifiedData
-      .map(({ deaths }) => deaths)
-      .filter((_, i) => !(i % 4));
+    const date = modifiedData.map(({ date }) => date);
+    // .filter((_, i) => !(i % 4));
+    const confirmed = modifiedData.map(({ confirmed }) => confirmed);
+    // .filter((_, i) => !(i % 4));
+    const deaths = modifiedData.map(({ deaths }) => deaths);
+    // .filter((_, i) => !(i % 4));
 
     const finalDataConfirmed = confirmed.map((confirmed, index) => {
       return {
