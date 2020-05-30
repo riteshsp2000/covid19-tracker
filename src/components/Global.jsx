@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from '../css/Global.module.css';
 
-import { Cards, Chart, CountryPicker, IntroCard } from './global/index';
+import {
+  Cards,
+  Chart,
+  CountryPicker,
+  IntroCard,
+} from './globalComponents/index';
 import { fetchData } from '../api';
 
 class Global extends React.Component {
