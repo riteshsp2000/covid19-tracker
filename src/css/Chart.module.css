@@ -19,3 +19,9 @@
   height: 40rem;
   width: 100%;
 }
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 120%;
+  }
+}

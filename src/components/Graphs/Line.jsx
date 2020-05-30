@@ -85,26 +85,3 @@ const Line = ({ dataFeed }) => {
 };
 
 export default Line;
-// const lineChart = dailyData.length ? (
-//   <Line
-//     data={{
-//       labels: dailyData.map(({ date }) => date),
-//       datasets: [
-//         {
-//           data: dailyData.map(({ deaths }) => deaths),
-//           label: 'Deaths',
-//           borderColor: 'red',
-//           backgroundColor: 'rgba(255, 0, 0, 0.5)',
-//           fill: true,
-//         },
-//         {
-//           data: dailyData.map(({ confirmed }) => confirmed),
-//           label: 'Deaths',
-//           borderColor: 'blue',
-//           backgroundColor: 'rgba(0, 0, 255, 0.5)',
-//           fill: true,
-//         },
-//       ],
-//     }}
-//   />
-// ) : null;

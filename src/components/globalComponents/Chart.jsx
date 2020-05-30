@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { fetchDailyData } from '../../api';
 import styles from '../../css/Chart.module.css';
-import Line from '../Graphs/Line';
-import MyResponsiveBar from '../Graphs/Bar';
+import Line from '../graphs/Line';
+import MyResponsiveBar from '../graphs/Bar';
 
 const Chart = ({ data, country }) => {
   // Declaration of dailyData hook and initializing on page load to fetch Graph Data
