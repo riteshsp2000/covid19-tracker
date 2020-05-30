@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { formatDistance } from 'date-fns';
 
 import { fetchUpdates } from '../../api/indiaApi';
 import Loader from '../utils/Loader';
@@ -20,7 +21,11 @@ const NewsSection = () => {
       return (
         <div className={styles.update} key={timestamp}>
           <h3 className={styles.title}>{update}</h3>
-          <h5 className={styles.time}>{timestamp}</h5>
+          <h5 className={styles.time}>
+            {'Updated ' +
+              formatDistance(new Date(timestamp * 1000), new Date()) +
+              ' ago'}
+          </h5>
         </div>
       );
     });
