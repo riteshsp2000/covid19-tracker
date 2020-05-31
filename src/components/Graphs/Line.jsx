@@ -1,11 +1,11 @@
 import React from 'react';
 import { ResponsiveLine } from '@nivo/line';
 
-const Line = ({ dataFeed, ticks, tickValues, color }) => {
+const Line = ({ dataFeed, ticks, tickValues, color, bottom, angle }) => {
   return (
     <ResponsiveLine
       data={dataFeed}
-      margin={{ top: 50, right: 40, bottom: 90, left: 90 }}
+      margin={{ top: 50, right: 40, bottom: bottom, left: 90 }}
       xScale={{
         type: 'point',
         min: 'auto',
@@ -27,7 +27,7 @@ const Line = ({ dataFeed, ticks, tickValues, color }) => {
         orient: 'bottom',
         tickSize: 5,
         tickPadding: 5,
-        tickRotation: 90,
+        tickRotation: angle,
         legend: '',
         legendOffset: 80,
         legendPosition: 'middle',
