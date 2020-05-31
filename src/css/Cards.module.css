@@ -1,31 +1,71 @@
 .container {
   margin: 1rem 0 !important;
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 12rem;
+  grid-gap: 1rem;
+  grid-template-areas: 
+  "first second third"
+}
+
+@media screen and (max-width: 660px) {
+  .container {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 10rem;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    "first"
+    "second"
+    "third"
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+.first .card {
+  grid-area: first;
+  
+}
+
+.second .card{
+  grid-area: second;
+  
+}
+
+.third .card {
+  grid-area: third;
+  
 }
 
 .card {
-  margin: 0 2% !important;
+  background-color: #00688B;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  box-shadow: 0px 4px 10px 4px rgb(0,0,0,0.34);
 }
 
-.infected {
-  border-bottom: 10px solid rgba(0, 0, 255, 0.7);
+.title {
+  margin: 10px 0;
+  font-size: 1.3rem;
 }
 
-.recovered {
-  border-bottom: 10px solid rgba(0, 255, 0, 0.7);
+.value {
+  margin: 10px 0 0 0;
+  font-size: 1.7rem;
 }
 
-.deaths {
-  border-bottom: 10px solid rgba(255, 0, 0, 0.7);
+.date {
+  margin: 10px 0 0 0;
+  font-size: 0.7rem;
 }
 
-.infected,
-.recovered,
-.deaths {
-  box-shadow: 5px 15px 35px 5px rgba(50, 88, 130, 0.32) !important;
-  margin: 10px !important;
-  border-radius: 15px !important;
-}
-
-.loader {
-  height: 10rem;
-}
