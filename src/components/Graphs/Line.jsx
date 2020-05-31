@@ -45,9 +45,9 @@ const Line = ({ dataFeed, ticks, tickValues, color, bottom, angle }) => {
       }}
       colors={{ scheme: color }}
       lineWidth={3}
-      pointSize={10}
+      pointSize={6}
       pointColor={{ theme: 'background' }}
-      pointBorderWidth={2}
+      pointBorderWidth={1}
       pointBorderColor={{ from: 'serieColor' }}
       pointLabel='y'
       pointLabelYOffset={-18}
