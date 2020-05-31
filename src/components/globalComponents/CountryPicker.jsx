@@ -6,6 +6,7 @@ import { fetchedCountriesList } from '../../api';
 import styles from '../../css/CountryPicker.module.css';
 
 const CountryPicker = ({ handleCountryChange }) => {
+  // Fetching the list of countries when the component loads
   const [fetchedCountries, setFetchedCountries] = useState([]);
 
   useEffect(() => {
@@ -15,7 +16,9 @@ const CountryPicker = ({ handleCountryChange }) => {
 
     fetchAPI();
   }, [setFetchedCountries]);
+  // ================================================================================
 
+  // Returning the <select> <option> list containing all the countries
   return (
     <FormControl className={styles.formControl} id='countryPicker'>
       <NativeSelect
@@ -31,6 +34,7 @@ const CountryPicker = ({ handleCountryChange }) => {
       </NativeSelect>
     </FormControl>
   );
+  // ================================================================================
 };
 
 export default CountryPicker;

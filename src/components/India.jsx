@@ -7,12 +7,15 @@ import styles from '../css/India.module.css';
 import ToggleSwitch from './utils/ToggleSwitch';
 
 const India = () => {
+  // Initializing the data to Handle the toggle of total or daily data
   const [checked, setChecked] = useState(false);
 
   const handleToggleChange = (checked) => {
     setChecked(checked);
   };
+  // ================================================================================
 
+  // Rendering the final component
   return (
     <div className={styles.container}>
       <div className={cx(styles.newsSection, styles.box)}>
@@ -31,6 +34,7 @@ const India = () => {
       </div>
     </div>
   );
+  // ================================================================================
 };
 
 export default India;

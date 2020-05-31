@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 import { fetchTotalData, fetchDailyData } from '../../api/indiaApi';
 import styles from '../../css/India.module.css';
-import Loader from '../utils/Loader';
+import MoonLoading from '../utils/MoonLoader';
 import Line from '../graphs/Line';
 
 const IndiaOverview = ({ checked }) => {
+  // Fetching the Daily and Total data when the component loads
   const [totalData, setTotalData] = useState({});
   const [dailyData, setDailyData] = useState({});
 
-  // Component Did Mount to fetch the Data
   useEffect(() => {
     const fetchApiTotal = async () => {
       setTotalData(await fetchTotalData());
@@ -22,20 +22,15 @@ const IndiaOverview = ({ checked }) => {
     fetchApiDaily();
     fetchApiTotal();
   }, []);
+  // ================================================================================
 
-  // Calculating the ticks to show on the x axis
-  const calculateTicks = () => {
-    if (!totalData) {
-      return null;
-    }
+  // Calculating the ticks to show on the x axis dynamically depending upon the number on data point
+  const tickValues = !totalData.date
+    ? null
+    : totalData.date.filter((_, i) => !(i % 8));
+  // ================================================================================
 
-    if (!totalData.date) {
-      return null;
-    }
-    return totalData.date.filter((_, i) => !(i % 8));
-  };
-  const tickValues = calculateTicks();
-
+  // Function to render the graph along with which data to show depending on the toggle state
   const renderLineGraph = totalData.dataFeed ? (
     <div className={styles.displayGraph}>
       <Line
@@ -48,12 +43,19 @@ const IndiaOverview = ({ checked }) => {
       />
     </div>
   ) : null;
+  // ================================================================================
 
-  if (!totalData) {
-    return <Loader />;
+  // Final Conditional rendering depending upon whether the data is loaded or not
+  if (!totalData.dataFeed) {
+    return (
+      <div className={styles.loadingDiv}>
+        <MoonLoading size={80} />
+      </div>
+    );
   }
 
   return <div>{renderLineGraph}</div>;
+  // ================================================================================
 };
 
 export default IndiaOverview;
