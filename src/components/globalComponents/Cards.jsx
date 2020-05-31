@@ -6,7 +6,7 @@ import Card from './Card';
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
-    return <Loader />;
+    return <Loader radius={10} height={30} width={7} margin={20} />;
   }
 
   return (

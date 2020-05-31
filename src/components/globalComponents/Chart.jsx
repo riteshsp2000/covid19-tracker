@@ -18,8 +18,7 @@ const Chart = ({ data, country }) => {
   }, []);
   // ================================================================================
 
-  // Following logic is written to calculate the number of ticks and tickvalues to be displayed in the graph
-
+  // Logic to calculate the number of ticks and tickvalues to be displayed in the graph
   const calculateTicks = () => {
     const confirmedObject = dailyData[0];
     if (!confirmedObject) {
@@ -36,13 +35,12 @@ const Chart = ({ data, country }) => {
       .map(({ x }) => x)
       .filter((_, i) => !(i % 6));
 
-    console.log(ticks);
     return { ticks, tickValues };
   };
-
   const xValues = calculateTicks();
+  // ================================================================================
 
-  // Declaring a Line Chart with appropriate Data
+  // Declaring a Line Chart with appropriate Data and scales
   const lineChart =
     xValues != null ? (
       <div className={styles.displayGraph}>
@@ -79,7 +77,9 @@ const Chart = ({ data, country }) => {
         },
       ]
     : null;
+  // ================================================================================
 
+  // function to render the bar graphs depending upon the selected country
   const barChart = data.confirmed ? (
     <div className={styles.displayGraph}>
       <MyResponsiveBar dataFeed={barData} country={country} />
@@ -87,10 +87,11 @@ const Chart = ({ data, country }) => {
   ) : null;
   // ================================================================================
 
-  // Rendering the JSX depending upon the country preferences
+  // Rendering the Final JSX depending upon the country preferences
   return (
     <div className={styles.container}>{country ? barChart : lineChart}</div>
   );
+  // ================================================================================
 };
 
 export default Chart;

@@ -9,18 +9,17 @@ const override = css`
   margin: 0 auto;
 `;
 
-const Loading = ({ size }) => {
+const Loading = ({ radius, height, width, margin }) => {
   return (
     <div className={styles.loader}>
       <FadeLoader
         css={override}
-        size={size}
         color={'#000000'}
         loading={true}
-        radius={10}
-        height={30}
-        width={11}
-        margin={20}
+        radius={radius}
+        height={height}
+        width={width}
+        margin={margin}
       />
     </div>
   );

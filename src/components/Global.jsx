@@ -5,17 +5,18 @@ import { Cards, Chart, CountryPicker, IntroCard } from './globalComponents';
 import { fetchData } from '../api';
 
 class Global extends React.Component {
+  // Fetching the Global Count data when the component loads
   state = {
     data: {},
     country: '',
   };
 
-  // Fetching the appropriate data on initial Load
   async componentDidMount() {
     const fetchedData = await fetchData();
 
     this.setState({ data: fetchedData });
   }
+  // ================================================================================
 
   // Handler to manage and update the country when selected
   handleCountryChange = async (country) => {
@@ -29,6 +30,7 @@ class Global extends React.Component {
       this.setState({ data: countryData, country: country });
     }
   };
+  // ================================================================================
 
   // Rendering the final data
   render() {
@@ -44,6 +46,7 @@ class Global extends React.Component {
       </div>
     );
   }
+  // ================================================================================
 }
 
 export default Global;
