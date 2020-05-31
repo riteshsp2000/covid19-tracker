@@ -4,9 +4,10 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: 40rem;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   grid-template-areas: 
   "news news overview overview overview overview"
+  "deepDive deepDive deepDive deepDive deepDive deepDive"
 }
 
 .newsSection {
@@ -15,6 +16,10 @@
 
 .indiaOverview {
   grid-area: overview;
+}
+
+.deepDive {
+  grid-area: deepDive;
 }
 
 .box{
@@ -112,6 +117,7 @@
   grid-template-areas: 
   "news news news news"
   "overview overview overview overview"
+  "deepDive deepDive deepDive deepDive"
   }
 }
 

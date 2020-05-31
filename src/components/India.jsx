@@ -32,6 +32,9 @@ const India = () => {
         </h4>
         <IndiaOverview checked={checked} />
       </div>
+      <div className={cx(styles.deepDive, styles.box)}>
+        <h4>Latest Updates</h4>
+      </div>
     </div>
   );
   // ================================================================================

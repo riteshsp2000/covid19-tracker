@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const url = 'https://covid19.mathdro.id/api';
 
-// Defining a function to fetch the Cards Data as well as individual country Data
+// Function to fetch the Cards Data as well as individual country Data
 export const fetchData = async (country) => {
   let variableURL = url;
 
@@ -20,24 +20,22 @@ export const fetchData = async (country) => {
     console.log(error);
   }
 };
+// ================================================================================
 
-// Defining a function to fetch the daily Data for the global graph and then modifing the data to return in the appropriate form
+// Function to fetch the daily Data for the global graph and then modifing the data to return in the appropriate form
 export const fetchDailyData = async () => {
   try {
     const { data } = await axios.get(`${url}/daily`);
 
-    const modifiedData = data.map((dailyData) => ({
-      confirmed: dailyData.confirmed.total,
-      deaths: dailyData.deaths.total,
-      date: dailyData.reportDate,
+    const modifiedData = data.map(({ confirmed, deaths, reportDate }) => ({
+      confirmed: confirmed.total,
+      deaths: deaths.total,
+      date: reportDate,
     }));
 
     const date = modifiedData.map(({ date }) => date);
-    // .filter((_, i) => !(i % 4));
     const confirmed = modifiedData.map(({ confirmed }) => confirmed);
-    // .filter((_, i) => !(i % 4));
     const deaths = modifiedData.map(({ deaths }) => deaths);
-    // .filter((_, i) => !(i % 4));
 
     const finalDataConfirmed = confirmed.map((confirmed, index) => {
       return {
@@ -71,8 +69,9 @@ export const fetchDailyData = async () => {
     console.log(error);
   }
 };
+// ================================================================================
 
-// Defining a function to fetch a list of countries
+// Function to fetch a list of countries
 export const fetchedCountriesList = async () => {
   try {
     const {
@@ -84,3 +83,4 @@ export const fetchedCountriesList = async () => {
     console.log(error);
   }
 };
+// ================================================================================

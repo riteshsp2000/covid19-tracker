@@ -14,6 +14,7 @@ const App = () => {
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
+  // ================================================================================
 
   return (
     <BrowserRouter>
