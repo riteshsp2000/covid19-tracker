@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import { fetchTotalData } from '../../api/indiaApi';
+import { fetchTotalData, fetchDailyData } from '../../api/indiaApi';
 import styles from '../../css/India.module.css';
 import Loader from '../utils/Loader';
 import Line from '../graphs/Line';
 
-const IndiaOverview = () => {
+const IndiaOverview = ({ checked }) => {
   const [totalData, setTotalData] = useState({});
+  const [dailyData, setDailyData] = useState({});
 
   // Component Did Mount to fetch the Data
   useEffect(() => {
@@ -14,6 +15,11 @@ const IndiaOverview = () => {
       setTotalData(await fetchTotalData());
     };
 
+    const fetchApiDaily = async () => {
+      setDailyData(await fetchDailyData());
+    };
+
+    fetchApiDaily();
     fetchApiTotal();
   }, []);
 
@@ -33,7 +39,7 @@ const IndiaOverview = () => {
   const renderLineGraph = totalData.dataFeed ? (
     <div className={styles.displayGraph}>
       <Line
-        dataFeed={totalData.dataFeed}
+        dataFeed={checked ? dailyData.dataFeed : totalData.dataFeed}
         ticks={16}
         tickValues={tickValues}
         color={'category10'}

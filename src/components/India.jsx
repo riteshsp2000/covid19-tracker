@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 
 import NewsSection from './indiaComponents/NewsSection';
 import IndiaOverview from './indiaComponents/IndiaOverview';
 import styles from '../css/India.module.css';
+import ToggleSwitch from './utils/ToggleSwitch';
 
 const India = () => {
+  const [checked, setChecked] = useState(false);
+
+  const handleToggleChange = (checked) => {
+    setChecked(checked);
+  };
+
   return (
     <div className={styles.container}>
       <div className={cx(styles.newsSection, styles.box)}>
@@ -13,8 +20,14 @@ const India = () => {
         <NewsSection />
       </div>
       <div className={cx(styles.indiaOverview, styles.box)}>
-        <h4>Indian Covid-19 Statistics</h4>
-        <IndiaOverview />
+        <h4>
+          <span>Indian Covid-19 Statistics</span>
+          <ToggleSwitch
+            checked={checked}
+            handleToggleChange={handleToggleChange}
+          />
+        </h4>
+        <IndiaOverview checked={checked} />
       </div>
     </div>
   );
