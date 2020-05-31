@@ -44,11 +44,7 @@ const IndiaOverview = () => {
   ) : null;
 
   if (!totalData) {
-    return (
-      <div>
-        <Loader />
-      </div>
-    );
+    return <Loader />;
   }
 
   return <div>{renderLineGraph}</div>;

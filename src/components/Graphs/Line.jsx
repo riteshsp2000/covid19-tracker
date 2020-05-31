@@ -5,7 +5,7 @@ const Line = ({ dataFeed, ticks, tickValues, color, bottom, angle }) => {
   return (
     <ResponsiveLine
       data={dataFeed}
-      margin={{ top: 50, right: 40, bottom: bottom, left: 90 }}
+      margin={{ top: 50, right: 30, bottom: bottom, left: 70 }}
       xScale={{
         type: 'point',
         min: 'auto',
