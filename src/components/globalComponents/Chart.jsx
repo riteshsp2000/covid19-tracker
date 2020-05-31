@@ -35,6 +35,8 @@ const Chart = ({ data, country }) => {
     const tickValues = confirmedArray
       .map(({ x }) => x)
       .filter((_, i) => !(i % 6));
+
+    console.log(ticks);
     return { ticks, tickValues };
   };
 
@@ -49,6 +51,8 @@ const Chart = ({ data, country }) => {
           ticks={xValues.ticks}
           tickValues={xValues.tickValues}
           color={'paired'}
+          bottom={90}
+          angle={90}
         />
       </div>
     ) : null;
