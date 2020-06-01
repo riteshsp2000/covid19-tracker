@@ -82,7 +82,18 @@ const Chart = ({ data, country }) => {
   // function to render the bar graphs depending upon the selected country
   const barChart = data.confirmed ? (
     <div className={styles.displayGraph}>
-      <MyResponsiveBar dataFeed={barData} country={country} />
+      <MyResponsiveBar
+        dataFeed={barData}
+        country={country}
+        keys={['count']}
+        indexBy={'type'}
+        right={50}
+        color={'paired'}
+        legend={[]}
+        colorBy={'index'}
+        groupMode={'stacked'}
+        layout={'vertical'}
+      />
     </div>
   ) : null;
   // ================================================================================

@@ -118,6 +118,7 @@
   "news news news news"
   "overview overview overview overview"
   "deepDive deepDive deepDive deepDive"
+  "deepDive deepDive deepDive deepDive"
   }
 }
 
@@ -127,4 +128,57 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+
+/* =================================================== */
+
+.deepDiveTitle {
+  margin: 10px;
+  padding: 10px;
+  border-bottom: 2px solid #D0D0D0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.graphContainerDD {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 17rem;
+  grid-gap: 1rem;
+  grid-template-areas: 
+  "first first second second"
+  "third third fourth fourth"
+}
+
+@media screen and (max-width: 660px) {
+  .graphContainerDD {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 18rem;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    "first"
+    "second"
+    "third"
+    "fourth"
+  }
+}
+
+.graphFirst {
+  grid-area: first;
+}
+
+.graphSecond {
+  grid-area: second;
+}
+
+.graphThird {
+  grid-area: third;
+}
+
+.graphFourth {
+  grid-area: fourth;
 }
