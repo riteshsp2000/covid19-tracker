@@ -3,6 +3,8 @@ import cx from 'classnames';
 
 import NewsSection from './indiaComponents/NewsSection';
 import IndiaOverview from './indiaComponents/IndiaOverview';
+import DeepDive from './indiaComponents/DeepDive';
+
 import styles from '../css/India.module.css';
 import ToggleSwitch from './utils/ToggleSwitch';
 
@@ -22,6 +24,7 @@ const India = () => {
         <h4>Latest Updates</h4>
         <NewsSection />
       </div>
+
       <div className={cx(styles.indiaOverview, styles.box)}>
         <h4>
           <span>Indian Covid-19 Statistics</span>
@@ -32,8 +35,10 @@ const India = () => {
         </h4>
         <IndiaOverview checked={checked} />
       </div>
-      <div className={cx(styles.deepDive, styles.box)}>
-        <h4>Latest Updates</h4>
+
+      <div className={cx(styles.deepDive)}>
+        <h4 className={styles.deepDiveTitle}>Deep Dive</h4>
+        <DeepDive />
       </div>
     </div>
   );
