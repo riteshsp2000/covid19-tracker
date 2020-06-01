@@ -8,7 +8,6 @@ const MyResponsiveBar = ({
   indexBy,
   right,
   color,
-  legend,
   colorBy,
   groupMode,
   layout,
@@ -42,12 +41,35 @@ const MyResponsiveBar = ({
     }}
     layout={layout}
     groupMode={groupMode}
-    legend={legend}
     labelSkipWidth={8}
     labelTextColor='black'
     animate={true}
     motionStiffness={90}
     motionDamping={15}
+    legends={[
+      {
+        dataFrom: 'keys',
+        anchor: 'top',
+        direction: 'row',
+        justify: false,
+        translateX: 0,
+        translateY: -30,
+        itemsSpacing: 2,
+        itemWidth: 100,
+        itemHeight: 20,
+        itemDirection: 'left-to-right',
+        itemOpacity: 0.85,
+        symbolSize: 10,
+        effects: [
+          {
+            on: 'hover',
+            style: {
+              itemOpacity: 1,
+            },
+          },
+        ],
+      },
+    ]}
   />
 );
 

@@ -6,11 +6,13 @@ import {
   fetchTestedData,
   fetchMonthlyData,
   fetchStateData,
+  fetchAgeData,
 } from '../../api/indiaApi';
 
 import MyResponsivePie from '../graphs/Pie';
 import Line from '../graphs/Line';
 import MyResponsiveBar from '../graphs/Bar';
+import MyResponsiveTreeMap from '../graphs/TreeMap';
 import MoonLoading from '../utils/MoonLoader';
 
 const DeepDive = () => {
@@ -18,6 +20,7 @@ const DeepDive = () => {
   const [tests, setTests] = useState({});
   const [monthlyData, setMonthlyData] = useState([]);
   const [statesData, setStatesData] = useState([]);
+  const [ageData, setAgeData] = useState({});
 
   useEffect(() => {
     const fetchApiMonthly = async () => {
@@ -32,6 +35,11 @@ const DeepDive = () => {
       setStatesData(await fetchStateData());
     };
 
+    const fetchApiAge = async () => {
+      setAgeData(await fetchAgeData());
+    };
+
+    fetchApiAge();
     fetchApiStates();
     fetchApiMonthly();
     fetchApiTests();
@@ -53,8 +61,7 @@ const DeepDive = () => {
   // Rendering the appropriate JSX
   return (
     <div className={styles.graphContainerDD}>
-      <div className={cx(styles.graphFirst)}>
-        <h5>People Tested</h5>
+      <div className={cx(styles.graphFirst, styles.box)}>
         {!tests.date ? (
           loadingFunction
         ) : (
@@ -63,14 +70,14 @@ const DeepDive = () => {
             ticks={10}
             tickValues={tickValuesTests}
             color={'purpleRed_green'}
-            bottom={70}
+            bottom={80}
             angle={45}
           />
         )}
+        <h5 className={styles.ddGraphTitle}>People Tested</h5>
       </div>
 
-      <div className={cx(styles.graphSecond)}>
-        <h5>Cases by Months</h5>
+      <div className={cx(styles.graphSecond, styles.box)}>
         {monthlyData.length === 0 ? (
           loadingFunction
         ) : (
@@ -81,24 +88,31 @@ const DeepDive = () => {
             right={25}
             color={'set1'}
             colorBy={'id'}
-            legend={[]}
             groupMode={'stacked'}
             layout={'horizontal'}
           />
         )}
+        <h5 className={styles.ddGraphTitle}>Cases by Months</h5>
       </div>
 
-      <div className={cx(styles.graphThird)}>
-        <h5>Most Affected States</h5>
+      <div className={cx(styles.graphThird, styles.box)}>
         {statesData.length === 0 ? (
           loadingFunction
         ) : (
           <MyResponsivePie data={statesData} />
         )}
+        <h5 className={styles.ddGraphTitle}>Most Affected States</h5>
       </div>
 
-      <div className={cx(styles.graphFourth)}>
-        <h5>Fourth Graph</h5>
+      <div className={cx(styles.graphFourth, styles.box)}>
+        {!ageData.root ? (
+          loadingFunction
+        ) : (
+          <MyResponsiveTreeMap root={ageData} />
+        )}
+        <h5 className={styles.ddGraphTitle}>
+          Patients by Age (Sample size: 5000)
+        </h5>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ const India = () => {
 
       <div className={cx(styles.indiaOverview, styles.box)}>
         <h4>
-          <span>Indian Covid-19 Statistics</span>
+          <span>Indian Covid-19 Stats</span>
           <ToggleSwitch
             checked={checked}
             handleToggleChange={handleToggleChange}
