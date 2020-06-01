@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const UPDATES_URL = 'https://api.covid19india.org/updatelog/log.json';
 const DAILY_DATA = 'https://api.covid19india.org/data.json';
+const RAW_PATIENT_DATA = 'https://api.covid19india.org/raw_data5.json';
 
 // Function to fetch a list of Latest Updates
 export const fetchUpdates = async () => {
@@ -253,4 +254,78 @@ export const fetchStateData = async () => {
   });
 
   return topAffected;
+};
+
+export const fetchAgeData = async () => {
+  const {
+    data: { raw_data },
+  } = await axios.get(RAW_PATIENT_DATA);
+
+  const ageArray = raw_data
+    .map(({ agebracket }) => {
+      if (agebracket === '') return null;
+      return parseInt(agebracket, 10);
+    })
+    .filter((x) => x)
+    .slice(0, 5000)
+    .sort((a, b) => a - b);
+
+  const ages = Array(10).fill(0);
+
+  ageArray.forEach((age) => {
+    for (let i = 0; i < 10; i++) {
+      if (age > i * 10 && age <= (i + 1) * 10) {
+        ages[i]++;
+      }
+    }
+  });
+
+  const finalData = {
+    root: {
+      name: 'All People',
+      children: [
+        {
+          name: '0-10',
+          loc: ages[0],
+        },
+        {
+          name: '10-20',
+          loc: ages[1],
+        },
+        {
+          name: '20-30',
+          loc: ages[2],
+        },
+        {
+          name: '30-40',
+          loc: ages[3],
+        },
+        {
+          name: '40-50',
+          loc: ages[4],
+        },
+        {
+          name: '50-60',
+          loc: ages[5],
+        },
+        {
+          name: '60-70',
+          loc: ages[6],
+        },
+        {
+          name: '70-80',
+          loc: ages[7],
+        },
+        {
+          name: '80-90',
+          loc: ages[9],
+        },
+        {
+          name: '90-100',
+          loc: ages[9],
+        },
+      ],
+    },
+  };
+  return finalData;
 };
