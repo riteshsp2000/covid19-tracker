@@ -5,6 +5,7 @@ import { animateScroll as scroll } from 'react-scroll';
 import Global from './components/Global';
 import India from './components/India';
 import IndianStates from './components/IndianStates';
+import Helpline from './components/Helpline';
 
 import Header from './components/marginals/Header';
 import Footer from './components/marginals/Footer';
@@ -28,6 +29,9 @@ const App = () => {
         </Route>
         <Route path='/indianStates' exact>
           <IndianStates />
+        </Route>
+        <Route path='/Helpline' exact>
+          <Helpline />
         </Route>
         <Redirect to='/' />
       </Switch>

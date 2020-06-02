@@ -50,6 +50,16 @@ const Headers = () => {
             Indian States
           </NavLink>
         </li>
+        <li className={styles.navLinks}>
+          <NavLink
+            to='/helpline'
+            exact
+            className={styles.link}
+            activeClassName={styles.activeClass}
+          >
+            Helpline
+          </NavLink>
+        </li>
       </ul>
       <button className={styles.menu} onClick={() => handleMenuToggle()}>
         <i className='fas fa-bars fa-3x'></i>

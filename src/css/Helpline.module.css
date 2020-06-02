@@ -1,0 +1,145 @@
+.box{
+  background: #fff;
+  box-shadow: 0px 4px 10px 4px rgb(0,0,0,0.14);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.helpContainer {
+  margin: 0rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 5rem;
+  grid-gap: 2rem;
+  grid-template-areas:
+  "state state state state national national"
+  "state state state state national national"
+  "state state state state national national"
+  "state state state state national national"
+  "state state state state national national"
+  "state state state state national national"
+  "links links links links links links"
+  "links links links links links links"
+  "links links links links links links"
+  "links links links links links links"
+
+}
+
+.stateDetails {
+  grid-area: state;
+}
+
+.nationalDetails {
+  grid-area: national;
+}
+
+.links {
+  grid-area: links;
+}
+
+h2 {
+  margin: 5px;
+  padding: 5px;
+  border-bottom: 2px solid #D0D0D0;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.nationalDetailsDiv {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nationalDetailsDiv div{
+  margin-bottom: 3rem;
+}
+
+.nationalDetailsDiv div h3 {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.nationalDetailsDiv div a {
+  text-decoration: none;
+  color: #00818a;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.alignment a {
+  display: block;
+  margin-left: 1rem;
+}
+
+#twitter {
+  color:  #00acee;
+}
+
+#facebook {
+  color: #3b5998;
+  margin-left: 1.2rem;
+}
+
+
+
+
+
+.helpTable {
+  height: 35rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+.helpTable::-webkit-scrollbar {
+  width: 6px;
+  background-color: #fff;
+} 
+
+.helpTable::-webkit-scrollbar-thumb {
+  background-color:	#A8A8A8;
+  border-radius: 2px;
+}
+
+.helpTable::-webkit-scrollbar-track {
+  background-color: rgba(250, 246, 239, 0.623);
+}
+
+.helplineTable {
+  width: 100%;
+  border-bottom: 2px solid #D0D0D0;
+}
+
+th, td {
+  text-align: center;
+}
+
+td a, .helpLinks li a {
+  color: #00818a;
+}
+
+#helpLineID {
+  list-style-type: circle;
+}
+
+.helpLinks li {
+  margin: 0.5rem 1rem;
+  padding: 10px;
+  text-align: center;
+  width: auto;
+  margin: 0.5rem auto;
+}
+
+.helpLinks li p {
+  width: 100%;
+}
+
+.links h2 {
+  text-align: center;
+}
