@@ -496,6 +496,60 @@ const Helpline = () => {
 
       <div className={styles.links}>
         <h2>Helpful Links</h2>
+        <ul className={styles.helpLinks} id='helpLineID'>
+          <li>
+            <p>
+              HELPLINE NUMBERS (by State)
+              <br />
+              <a href='https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf'>
+                https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf
+              </a>
+            </p>
+          </li>
+          <li>
+            <p>
+              Ministry of Health and Family Welfare, Gov. of India
+              <br />
+              <a href='https://www.mohfw.gov.in/'>https://www.mohfw.gov.in/</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              Twitter updates by Press Information Bureau
+              <br />
+              <a href='https://twitter.com/PIB_India'>
+                https://twitter.com/PIB_India
+              </a>
+            </p>
+          </li>
+          <li>
+            <p>
+              WHO : COVID-19 Guidelines
+              <br />
+              <a href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019'>
+                https://www.who.int/emergencies/diseases/novel-coronavirus-2019
+              </a>
+            </p>
+          </li>
+          <li>
+            <p>
+              CDC
+              <br />
+              <a href='https://www.cdc.gov/coronavirus/2019-ncov/faq.html'>
+                https://www.cdc.gov/coronavirus/2019-ncov/faq.html
+              </a>
+            </p>
+          </li>
+          <li>
+            <p>
+              Myth Busters By WHO
+              <br />
+              <a href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters'>
+                https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters
+              </a>
+            </p>
+          </li>
+        </ul>
       </div>
     </div>
   );

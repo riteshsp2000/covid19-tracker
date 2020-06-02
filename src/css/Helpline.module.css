@@ -10,12 +10,20 @@
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 20rem;
+  grid-auto-rows: 5rem;
   grid-gap: 2rem;
   grid-template-areas:
   "state state state state national national"
   "state state state state national national"
+  "state state state state national national"
+  "state state state state national national"
+  "state state state state national national"
+  "state state state state national national"
   "links links links links links links"
+  "links links links links links links"
+  "links links links links links links"
+  "links links links links links links"
+
 }
 
 .stateDetails {
@@ -82,7 +90,7 @@ h2 {
 
 
 .helpTable {
-  height: 37rem;
+  height: 35rem;
   overflow-x: hidden;
   overflow-y: scroll;
   margin: 1rem;
@@ -112,6 +120,26 @@ th, td {
   text-align: center;
 }
 
-td a {
+td a, .helpLinks li a {
   color: #00818a;
+}
+
+#helpLineID {
+  list-style-type: circle;
+}
+
+.helpLinks li {
+  margin: 0.5rem 1rem;
+  padding: 10px;
+  text-align: center;
+  width: auto;
+  margin: 0.5rem auto;
+}
+
+.helpLinks li p {
+  width: 100%;
+}
+
+.links h2 {
+  text-align: center;
 }
