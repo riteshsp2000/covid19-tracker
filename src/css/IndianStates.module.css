@@ -1,0 +1,27 @@
+.container {
+  margin: 0rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 40rem;
+  grid-gap: 2rem;
+  grid-template-areas: 
+  "indiaMap indiaMap indiaMap indiaMap indiaInfo indiaInfo"
+  "stateMap stateMap stateMap stateMap stateInfo stateInfo"
+}
+
+.indiaMap {
+  grid-area: indiaMap;
+}
+
+.stateMap {
+  grid-area: stateMap;
+}
+
+.indiaInfo {
+  grid-area: indiaInfo;
+}
+
+.stateInfo {
+  grid-area: stateInfo;
+}

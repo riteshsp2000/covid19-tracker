@@ -111,7 +111,7 @@ const DeepDive = () => {
           <MyResponsiveTreeMap root={ageData} />
         )}
         <h5 className={styles.ddGraphTitle}>
-          Patients by Age (Sample size: 5000)
+          No. of Patients by Age (Sample size: 5000)
         </h5>
       </div>
     </div>
