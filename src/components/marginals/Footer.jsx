@@ -22,7 +22,7 @@ const Footer = ({ scrollToTop }) => {
       </div>
       <div className={cx(styles.box, styles.hello)}>
         <h5>Say Hello</h5>
-        <h5>riteshp2000.gmail.com</h5>
+        <h5>riteshp2000@gmail.com</h5>
       </div>
       <i
         onClick={() => scrollToTop()}
