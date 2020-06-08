@@ -19,9 +19,7 @@ const IndianStates = () => {
     <div className={styles.container}>
       <div className={styles.indiaMap}>
         <IndiaUpdate />
-        <div className={cx(styles.box2, styles.stateList)}>
-          <StatesList handleStateSelected={handleStateSelected} />
-        </div>
+        <StatesList handleStateSelected={handleStateSelected} state={clicked} />
       </div>
 
       <div className={styles.indiaInfo}>
