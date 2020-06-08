@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
 
 import IndiaUpdate from './indianStatesComponents/IndiaUpdate';
 import StatesList from './indianStatesComponents/StatesList';
@@ -18,7 +19,9 @@ const IndianStates = () => {
     <div className={styles.container}>
       <div className={styles.indiaMap}>
         <IndiaUpdate />
-        <StatesList handleStateSelected={handleStateSelected} />
+        <div className={cx(styles.box2, styles.stateList)}>
+          <StatesList handleStateSelected={handleStateSelected} />
+        </div>
       </div>
 
       <div className={styles.indiaInfo}>

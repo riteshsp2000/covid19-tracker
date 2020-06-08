@@ -25,3 +25,66 @@
 .stateInfo {
   grid-area: stateInfo;
 }
+
+/* ==================================================================================== */
+
+.indiaUpdateContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: inherit;
+  align-items: center;
+}
+
+.box {
+  border-radius: 8px;
+  /* box-shadow: 0px 4px 10px 4px rgb(0,0,0,0.34); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  width: 20%;
+}
+
+.box h1 {
+  margin: 10px;
+  padding: 10px;
+}
+
+.confirmed {
+  background: rgba(255,7,58,.12549);
+  color: #ff073a;
+}
+
+.active {
+  background: rgba(0,123,255,.0627451);
+  color: #007bff;
+}
+
+.deaths {
+  background: rgba(108,117,125,.0627451);
+  color: #6c757d;
+}
+
+.recovered {
+  background: rgba(40,167,69,.12549);
+  color: #28a745;
+}
+
+/* ==================================================================================== */
+
+
+.box2{
+  background: #fff;
+  box-shadow: 0px 4px 10px 4px rgb(0,0,0,0.14);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.stateList {
+  height: 85%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: 95%;
+}

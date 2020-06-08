@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
 
 import { fetchStatesData } from '../../api/indianStatesApi';
 import MoonLoading from '../utils/MoonLoader';
@@ -22,18 +23,28 @@ const IndiaUpdate = () => {
     </div>
   );
 
-  console.log(updates);
-
   return (
     <div>
       {!updates.active ? (
         loadingFunction
       ) : (
         <div className={styles.indiaUpdateContainer}>
-          <div className={styles.confirmed}>{updates.confirmed}</div>
-          <div className={styles.active}>{updates.active}</div>
-          <div className={styles.deaths}>{updates.deaths}</div>
-          <div className={styles.recovered}>{updates.recovered}</div>
+          <div className={cx(styles.confirmed, styles.box)}>
+            <h3>Confirmed</h3>
+            {updates.confirmed}
+          </div>
+          <div className={cx(styles.active, styles.box)}>
+            <h3>Active</h3>
+            {updates.active}
+          </div>
+          <div className={cx(styles.deaths, styles.box)}>
+            <h3>Deceased</h3>
+            {updates.deaths}
+          </div>
+          <div className={cx(styles.recovered, styles.box)}>
+            <h3>Recovered</h3>
+            {updates.recovered}
+          </div>
         </div>
       )}
     </div>
