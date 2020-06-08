@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { fetchStatesData } from '../../api/indianStatesApi';
 import MoonLoading from '../utils/MoonLoader';
 import styles from '../../css/IndianStates.module.css';
-// import '../../css/IndiaStatesTable.module.css';
 
-const StatesList = () => {
+const StatesList = ({ handleStateSelected }) => {
   const [states, setStates] = useState([]);
+  const [selectedState, setSelectedState] = useState('');
 
   useEffect(() => {
     const fetchStatesApi = async () => {
@@ -17,12 +17,21 @@ const StatesList = () => {
     fetchStatesApi();
   }, []);
 
-  console.log(states);
+  const handleStateClick = (state) => {
+    handleStateSelected(state);
+    setSelectedState(state);
+  };
 
   const renderTableContent = () => {
     return states.map(({ state, confirmed, active, deaths, recovered }) => {
       return (
-        <tr className={styles.stateRow}>
+        <tr
+          className={
+            selectedState === state ? styles.selectedStateRow : styles.stateRow
+          }
+          onClick={() => handleStateClick(`${state}`)}
+          key={state}
+        >
           <td>{state}</td>
           <td>{confirmed}</td>
           <td>{active}</td>

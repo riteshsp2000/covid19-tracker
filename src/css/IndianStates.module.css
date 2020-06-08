@@ -100,6 +100,7 @@
 table{
   width:100%;
   table-layout: fixed;
+  border-spacing: 0;
 }
 
 .tableHeader {
@@ -146,9 +147,14 @@ tr {
   background-color: rgba(0,0,0,0.1);
 }
 
-.tableBody table:nth-child(even) {
-  background-color: #398B93;
+.selectedStateRow {
+  background-color: rgba(0,0,0,0.1);
 }
+
+/* .selectedStateRow:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.1);
+} */
 
 
 /* for custom scrollbar for webkit browser*/
