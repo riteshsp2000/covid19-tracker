@@ -1,28 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import IndiaMap from './indianStatesComponents/IndiaMap';
-import StatesMap from './indianStatesComponents/StateMap';
-import InfoCard from './indianStatesComponents/InfoCard';
+import IndiaUpdate from './indianStatesComponents/IndiaUpdate';
+import StatesList from './indianStatesComponents/StatesList';
+import GraphsList from './indianStatesComponents/GraphsList';
+import DistrictsList from './indianStatesComponents/DistrictsList';
 
 import styles from '../css/IndianStates.module.css';
 
 const IndianStates = () => {
+  const [clicked, setClicked] = useState('');
+
+  const handleStateSelected = (state) => {
+    setClicked(state);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.indiaMap}>
-        <IndiaMap />
+        <IndiaUpdate />
+        <StatesList handleStateSelected={handleStateSelected} />
       </div>
 
       <div className={styles.indiaInfo}>
-        <InfoCard />
+        <GraphsList />
       </div>
 
       <div className={styles.stateMap}>
-        <StatesMap />
+        <DistrictsList />
       </div>
 
       <div className={styles.stateInfo}>
-        <InfoCard />
+        <h1>Helllllo</h1>
       </div>
     </div>
   );
