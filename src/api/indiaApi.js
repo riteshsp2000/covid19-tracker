@@ -285,43 +285,43 @@ export const fetchAgeData = async () => {
       name: 'All People',
       children: [
         {
-          name: '0-10',
+          name: '0-10 yrs',
           loc: ages[0],
         },
         {
-          name: '10-20',
+          name: '10-20 yrs',
           loc: ages[1],
         },
         {
-          name: '20-30',
+          name: '20-30 yrs',
           loc: ages[2],
         },
         {
-          name: '30-40',
+          name: '30-40 yrs',
           loc: ages[3],
         },
         {
-          name: '40-50',
+          name: '40-50 yrs',
           loc: ages[4],
         },
         {
-          name: '50-60',
+          name: '50-60 yrs',
           loc: ages[5],
         },
         {
-          name: '60-70',
+          name: '60-70 yrs',
           loc: ages[6],
         },
         {
-          name: '70-80',
+          name: '70-80 yrs',
           loc: ages[7],
         },
         {
-          name: '80-90',
+          name: '80-90 yrs',
           loc: ages[9],
         },
         {
-          name: '90-100',
+          name: '90-100 yrs',
           loc: ages[9],
         },
       ],

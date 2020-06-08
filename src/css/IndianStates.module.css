@@ -1,0 +1,171 @@
+.container {
+  margin: 0rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 40rem;
+  grid-gap: 2rem;
+  grid-template-areas: 
+  "indiaMap indiaMap indiaMap indiaMap indiaInfo indiaInfo"
+  "stateMap stateMap stateMap stateMap stateInfo stateInfo"
+}
+
+.indiaMap {
+  grid-area: indiaMap;
+}
+
+.stateMap {
+  grid-area: stateMap;
+}
+
+.indiaInfo {
+  grid-area: indiaInfo;
+}
+
+.stateInfo {
+  grid-area: stateInfo;
+}
+
+.loadingDiv {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==================================================================================== */
+
+.indiaUpdateContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: inherit;
+  align-items: center;
+}
+
+.box {
+  border-radius: 8px;
+  /* box-shadow: 0px 4px 10px 4px rgb(0,0,0,0.34); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  width: 20%;
+}
+
+.box h1 {
+  margin: 10px;
+  padding: 10px;
+}
+
+.confirmed {
+  background: rgba(255,7,58,.12549);
+  color: #ff073a;
+}
+
+.active {
+  background: rgba(0,123,255,.0627451);
+  color: #007bff;
+}
+
+.deaths {
+  background: rgba(108,117,125,.0627451);
+  color: #6c757d;
+}
+
+.recovered {
+  background: rgba(40,167,69,.12549);
+  color: #28a745;
+}
+
+/* ==================================================================================== */
+
+
+.box2{
+  background: #fff;
+  box-shadow: 0px 4px 10px 4px rgb(0,0,0,0.14);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.stateList {
+  height: 80%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 95%;
+}
+
+table{
+  width:100%;
+  table-layout: fixed;
+  border-spacing: 0;
+}
+
+.tableHeader {
+  background-color: #398B93;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px -4px 10px 4px rgb(0,0,0,0.14);
+}
+
+.tableBody {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 0px 10px 4px rgb(0,0,0,0.14);
+  overflow-x:auto;
+  height: 90%;
+}
+
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+  margin: 0;
+}
+
+tr {
+  margin: 0;
+}
+
+.stateRow:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.selectedStateRow {
+  background-color: rgba(0,0,0,0.1);
+}
+
+/* .selectedStateRow:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.1);
+} */
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 3px;
+} 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}

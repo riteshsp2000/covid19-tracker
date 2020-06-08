@@ -23,7 +23,6 @@
   "links links links links links links"
   "links links links links links links"
   "links links links links links links"
-
 }
 
 .stateDetails {
@@ -142,4 +141,29 @@ td a, .helpLinks li a {
 
 .links h2 {
   text-align: center;
+}
+
+@media screen and (max-width: 660px) {
+  .helpContainer {
+    margin: 0rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 10rem;
+    grid-gap: 2rem;
+    grid-template-areas:
+    "state state state"
+    "state state state"
+    "state state state"
+    "state state state"
+    "national national national"
+    "national national national"
+    "links links links"
+    "links links links"
+    "links links links"
+  }
+
+  .nationalDetailsDiv {
+    height: 100%;
+  }
 }
