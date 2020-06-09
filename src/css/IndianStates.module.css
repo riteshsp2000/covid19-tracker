@@ -253,3 +253,8 @@ tr {
   background: rgba(32,26,162,.12549);
   color: rgba(32,26,162,.866667);
 }
+
+
+#districtList {
+  height: 100%; 
+}

@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import { fetchDistrictsData } from '../../api/indianStatesApi';
 import styles from '../../css/IndianStates.module.css';
+import MoonLoading from '../utils/MoonLoader';
 
 const DistrictsList = ({ stateName }) => {
   // const [clickedDistrict, setClickedDistrict] = useState('')
@@ -16,6 +17,22 @@ const DistrictsList = ({ stateName }) => {
     console.log(stateName);
     fetchDistrictApi();
   }, [stateName]);
+
+  const renderDistrictsList = () => {
+    return districtData.districtData.map(
+      ({ district, confirmed, active, deceased, recovered }) => {
+        return (
+          <tr className={styles.stateRow} key={district}>
+            <td className={styles.columnWidth}>{district}</td>
+            <td>{confirmed}</td>
+            <td>{active}</td>
+            <td>{deceased}</td>
+            <td>{recovered}</td>
+          </tr>
+        );
+      }
+    );
+  };
 
   const renderTableHeadings = () => {
     if (window.screen.size > 660) {
@@ -41,18 +58,18 @@ const DistrictsList = ({ stateName }) => {
     );
   };
 
-  // const loadingFunction = (
-  //   <div className={styles.loadingDiv}>
-  //     <MoonLoading size={50} />
-  //   </div>
-  // );
+  const loadingFunction = (
+    <div className={styles.loadingDiv}>
+      <MoonLoading size={50} />
+    </div>
+  );
 
-  // if (states.length === 0) {
-  //   return loadingFunction;
-  // }
+  if (!districtData.districtData) {
+    return loadingFunction;
+  }
 
   return (
-    <div className={styles.stateList}>
+    <div className={styles.stateList} id={styles.districtList}>
       <div className={styles.tableHeader}>
         <table>
           <thead>{renderTableHeadings()}</thead>
@@ -60,7 +77,7 @@ const DistrictsList = ({ stateName }) => {
       </div>
       <div className={styles.tableBody}>
         <table>
-          <tbody></tbody>
+          <tbody>{renderDistrictsList()}</tbody>
         </table>
       </div>
     </div>
