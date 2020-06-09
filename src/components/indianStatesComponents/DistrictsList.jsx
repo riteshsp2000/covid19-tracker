@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
 
-import { fetchDistrictsData } from '../../api/indianStatesApi';
+import {
+  fetchDistrictsData,
+  fetchDistrictZones,
+} from '../../api/indianStatesApi';
 import styles from '../../css/IndianStates.module.css';
 import MoonLoading from '../utils/MoonLoader';
 
 const DistrictsList = ({ stateName }) => {
   // const [clickedDistrict, setClickedDistrict] = useState('')
   const [districtData, setDistrictData] = useState({});
+  const [zones, setZones] = useState({});
 
   useEffect(() => {
     const fetchDistrictApi = async () => {
       setDistrictData(await fetchDistrictsData(stateName));
     };
 
-    console.log(stateName);
+    const fetchZonesApi = async () => {
+      setZones(await fetchDistrictZones(stateName));
+    };
+
+    fetchZonesApi();
     fetchDistrictApi();
   }, [stateName]);
 
+  console.log(zones);
   const renderDistrictsList = () => {
     return districtData.districtData.map(
       ({ district, confirmed, active, deceased, recovered }) => {

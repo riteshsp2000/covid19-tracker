@@ -6,7 +6,7 @@ import { utcToZonedTime } from 'date-fns-tz';
 
 const STATES_DATA = 'https://api.covid19india.org/data.json';
 const STATES_DAILY_DATA = 'https://api.covid19india.org/states_daily.json';
-const DISTRICT_LIST_DATA = 'https://api.covid19india.org/v3/data.json';
+const DISTRICT_ZONES = 'https://api.covid19india.org/zones.json';
 const DISTRICT_DATA =
   'https://api.covid19india.org/v2/state_district_wise.json';
 
@@ -162,4 +162,30 @@ export const fetchDistrictsData = async (stateName) => {
     });
 
   return stateData[0];
+};
+
+export const fetchDistrictZones = async (stateName) => {
+  const {
+    data: { zones },
+  } = await axios.get(DISTRICT_ZONES);
+
+  let green = [];
+  let red = [];
+  let orange = [];
+
+  zones.map(({ district, state, zone }) => {
+    if (state === stateName) {
+      switch (zone) {
+        case 'Green':
+          green.push(district);
+        case 'Orange':
+          orange.push(district);
+        case 'Red':
+          red.push(district);
+      }
+    }
+    return;
+  });
+
+  return { green, red, orange };
 };
