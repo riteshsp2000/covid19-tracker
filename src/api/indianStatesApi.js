@@ -79,6 +79,7 @@ export const fetchStatesDailyData = async (stateName) => {
   const activeData = [];
   const deceasedData = [];
   const recoveredData = [];
+  const dates = [];
 
   StateData.map(
     ({ dailyconfirmed, dailyactive, dailydeceased, dailyrecovered, date }) => {
@@ -86,38 +87,49 @@ export const fetchStatesDailyData = async (stateName) => {
       activeData.push({ x: date, y: dailyactive });
       deceasedData.push({ x: date, y: dailydeceased });
       recoveredData.push({ x: date, y: dailyrecovered });
+      dates.push(date);
       return null;
     }
   );
 
-  const confirmed = {
-    id: 'Confirmed',
-    color: 'hsl(101, 70%, 50%)',
-    data: confirmedData,
-  };
+  const confirmed = [
+    {
+      id: 'Confirmed',
+      color: 'hsl(101, 70%, 50%)',
+      data: confirmedData,
+    },
+  ];
 
-  const active = {
-    id: 'Confirmed',
-    color: 'hsl(101, 70%, 50%)',
-    data: confirmedData,
-  };
+  const active = [
+    {
+      id: 'Confirmed',
+      color: 'hsl(101, 70%, 50%)',
+      data: confirmedData,
+    },
+  ];
 
-  const deceased = {
-    id: 'Confirmed',
-    color: 'hsl(101, 70%, 50%)',
-    data: confirmedData,
-  };
+  const deceased = [
+    {
+      id: 'Confirmed',
+      color: 'hsl(101, 70%, 50%)',
+      data: confirmedData,
+    },
+  ];
 
-  const recovered = {
-    id: 'Confirmed',
-    color: 'hsl(101, 70%, 50%)',
-    data: confirmedData,
-  };
+  const recovered = [
+    {
+      id: 'Confirmed',
+      color: 'hsl(101, 70%, 50%)',
+      data: confirmedData,
+    },
+  ];
 
   return {
     confirmed,
     active,
     deceased,
     recovered,
+    dates,
+    areaName: stateName,
   };
 };

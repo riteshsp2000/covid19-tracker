@@ -43,7 +43,8 @@ const Line = ({ dataFeed, ticks, tickValues, color, bottom, angle }) => {
         legendOffset: -80,
         legendPosition: 'middle',
       }}
-      colors={{ scheme: color }}
+      // colors={{ scheme: color }}
+      colors={color}
       lineWidth={3}
       pointSize={6}
       pointColor={{ theme: 'background' }}

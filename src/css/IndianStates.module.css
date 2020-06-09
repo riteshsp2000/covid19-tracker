@@ -3,7 +3,7 @@
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 40rem;
+  grid-auto-rows: 50rem;
   grid-gap: 2rem;
   grid-template-areas: 
   "indiaMap indiaMap indiaMap indiaMap indiaInfo indiaInfo"
@@ -31,6 +31,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.displayGraph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 /* ==================================================================================== */
@@ -170,4 +178,54 @@ tr {
 ::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
   border-radius: 3px;
+}
+
+/* ==================================================================================== */
+
+.graphListParentDiv{
+  height: 100%;
+}
+
+.graphsListContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 95%;
+}
+
+.confirmedDiv {
+  background: rgba(255,7,58,.12549);
+  color: #ff073a;
+  width: 95%;
+  height: 20%;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.activeDiv {
+  background: rgba(0,123,255,.0627451);
+  color: #007bff;
+  width: 95%;
+  height: 20%;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.deceasedDiv {
+  background: rgba(108,117,125,.0627451);
+  color: #6c757d;
+  width: 95%;
+  height: 20%;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.recoveredDiv {
+  background: rgba(40,167,69,.12549);
+  color: #28a745;
+  width: 95%;
+  height: 20%;
+  margin: 1rem;
+  border-radius: 10px;
 }

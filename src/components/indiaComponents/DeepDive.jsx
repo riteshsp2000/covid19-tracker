@@ -69,7 +69,7 @@ const DeepDive = () => {
             dataFeed={tests.finalData}
             ticks={10}
             tickValues={tickValuesTests}
-            color={'purpleRed_green'}
+            color={'#1f19a2'}
             bottom={80}
             angle={45}
           />
