@@ -10,7 +10,7 @@ const Helpline = () => {
         <h2>Statewise Helpline number</h2>
         <div className={styles.helpTable}>
           <table className={styles.helplineTable}>
-            <thead>
+            <thead id={styles.tableHeading}>
               <tr>
                 <th>Sr.No</th>
                 <th className='state-col'>State</th>
@@ -342,7 +342,7 @@ const Helpline = () => {
           </table>
           <br />
           <table className={styles.helplineTable}>
-            <thead>
+            <thead id={styles.tableHeading2}>
               <tr>
                 <th>Sr.No</th>
                 <th className='state-col'>Union Territory</th>
@@ -502,7 +502,8 @@ const Helpline = () => {
               HELPLINE NUMBERS (by State)
               <br />
               <a href='https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf'>
-                https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf
+                https://www.mohfw.gov.in/coronvavirus
+                {window.screen.size > 660 ? '' : <br />}helplinenumber.pdf
               </a>
             </p>
           </li>
@@ -527,7 +528,8 @@ const Helpline = () => {
               WHO : COVID-19 Guidelines
               <br />
               <a href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019'>
-                https://www.who.int/emergencies/diseases/novel-coronavirus-2019
+                https://www.who.int/emergencies/diseases
+                {window.screen.size > 660 ? '' : <br />}/novel-coronavirus-2019
               </a>
             </p>
           </li>
@@ -545,7 +547,9 @@ const Helpline = () => {
               Myth Busters By WHO
               <br />
               <a href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters'>
-                https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters
+                https://www.who.int/emergencies/diseases/
+                {window.screen.size > 660 ? '' : <br />}
+                novel-coronavirus-2019/advice-for-public/myth-busters
               </a>
             </p>
           </li>

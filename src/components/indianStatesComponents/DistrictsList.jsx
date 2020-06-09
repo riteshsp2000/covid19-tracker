@@ -17,19 +17,45 @@ const DistrictsList = ({ stateName }) => {
     fetchDistrictApi();
   }, [stateName]);
 
+  const renderTableHeadings = () => {
+    if (window.screen.size > 660) {
+      return (
+        <tr>
+          <th>District</th>
+          <th>Confirmed</th>
+          <th>Active</th>
+          <th>Deceased</th>
+          <th>Recovered</th>
+        </tr>
+      );
+    }
+
+    return (
+      <tr>
+        <th className={styles.columnWidth}>Distict</th>
+        <th>C</th>
+        <th>A</th>
+        <th>D</th>
+        <th>R</th>
+      </tr>
+    );
+  };
+
+  // const loadingFunction = (
+  //   <div className={styles.loadingDiv}>
+  //     <MoonLoading size={50} />
+  //   </div>
+  // );
+
+  // if (states.length === 0) {
+  //   return loadingFunction;
+  // }
+
   return (
     <div className={styles.stateList}>
       <div className={styles.tableHeader}>
         <table>
-          <thead>
-            <tr>
-              <th>District</th>
-              <th>Confirmed</th>
-              <th>Active</th>
-              <th>Deceased</th>
-              <th>Recovered</th>
-            </tr>
-          </thead>
+          <thead>{renderTableHeadings()}</thead>
         </table>
       </div>
       <div className={styles.tableBody}>
