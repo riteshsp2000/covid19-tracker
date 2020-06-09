@@ -13,7 +13,7 @@
 @media screen and (max-width: 900px) {
   .container {
     margin: 0rem;
-    padding: 1rem;
+    padding: 0rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 40rem;
@@ -62,19 +62,29 @@
 .indiaUpdateContainer {
   display: flex;
   flex-direction: row;
-  justify-content: inherit;
+  justify-content: initial;
   align-items: center;
 }
 
+@media screen and (max-width: 660px) {
+  .indiaUpdateContainer{
+    overflow-x: auto;
+  }
+
+  .columnWidth {
+    width: 4rem;
+  }
+}
+
 .box {
-  border-radius: 8px;
+  border-radius: 5px;
   /* box-shadow: 0px 4px 10px 4px rgb(0,0,0,0.34); */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   width: 20%;
 }
 
@@ -117,7 +127,7 @@
   height: 80%;
   margin: 0 auto;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 0 0 1rem 0;
   width: 95%;
 }
 
@@ -138,7 +148,8 @@ table{
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: 0px 0px 10px 4px rgb(0,0,0,0.14);
-  overflow-x:auto;
+  /* overflow-x:scroll; */
+  overflow-y: scroll;
   height: 90%;
 }
 
@@ -183,15 +194,15 @@ tr {
 
 /* for custom scrollbar for webkit browser*/
 
-::-webkit-scrollbar {
+::-webkit-scrollbar:horizontal {
   width: 6px;
   border-radius: 3px;
 } 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track:horizontal {
   box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
   border-radius: 3px;
 } 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb:horizontal {
   box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
   border-radius: 3px;
 }

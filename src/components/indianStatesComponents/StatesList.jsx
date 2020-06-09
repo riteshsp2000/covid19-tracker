@@ -32,7 +32,7 @@ const StatesList = ({ handleStateSelected }) => {
           onClick={() => handleStateClick(`${state}`)}
           key={state}
         >
-          <td>{state}</td>
+          <td className={styles.columnWidth}>{state}</td>
           <td>{confirmed}</td>
           <td>{active}</td>
           <td>{deaths}</td>
@@ -40,6 +40,30 @@ const StatesList = ({ handleStateSelected }) => {
         </tr>
       );
     });
+  };
+
+  const renderTableHeadings = () => {
+    if (window.screen.size > 660) {
+      return (
+        <tr>
+          <th>State/UT</th>
+          <th>Confirmed</th>
+          <th>Active</th>
+          <th>Deceased</th>
+          <th>Recovered</th>
+        </tr>
+      );
+    }
+
+    return (
+      <tr>
+        <th className={styles.columnWidth}>State</th>
+        <th>C</th>
+        <th>A</th>
+        <th>D</th>
+        <th>R</th>
+      </tr>
+    );
   };
 
   const loadingFunction = (
@@ -56,15 +80,7 @@ const StatesList = ({ handleStateSelected }) => {
     <div className={styles.stateList}>
       <div className={styles.tableHeader}>
         <table>
-          <thead>
-            <tr>
-              <th>State/UT</th>
-              <th>Confirmed</th>
-              <th>Active</th>
-              <th>Deceased</th>
-              <th>Recovered</th>
-            </tr>
-          </thead>
+          <thead>{renderTableHeadings()}</thead>
         </table>
       </div>
       <div className={styles.tableBody}>

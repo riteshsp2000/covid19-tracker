@@ -1,9 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import _ from 'lodash';
 
-const DistrictsList = () => {
+import { fetchDistrictsData } from '../../api/indianStatesApi';
+import styles from '../../css/IndianStates.module.css';
+
+const DistrictsList = ({ stateName }) => {
+  // const [clickedDistrict, setClickedDistrict] = useState('')
+  const [districtData, setDistrictData] = useState({});
+
+  useEffect(() => {
+    const fetchDistrictApi = async () => {
+      setDistrictData(await fetchDistrictsData(stateName));
+    };
+
+    console.log(stateName);
+    fetchDistrictApi();
+  }, [stateName]);
+
   return (
-    <div>
-      <h1>Districts</h1>
+    <div className={styles.stateList}>
+      <div className={styles.tableHeader}>
+        <table>
+          <thead>
+            <tr>
+              <th>District</th>
+              <th>Confirmed</th>
+              <th>Active</th>
+              <th>Deceased</th>
+              <th>Recovered</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div className={styles.tableBody}>
+        <table>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
   );
 };
