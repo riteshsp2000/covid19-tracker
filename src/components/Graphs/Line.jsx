@@ -1,7 +1,7 @@
 import React from 'react';
 import { ResponsiveLine } from '@nivo/line';
 
-const Line = ({ dataFeed, ticks, tickValues, color, bottom, angle }) => {
+const Line = ({ dataFeed, ticks, tickValues, color, bottom, angle, theme }) => {
   return (
     <ResponsiveLine
       data={dataFeed}
@@ -33,6 +33,7 @@ const Line = ({ dataFeed, ticks, tickValues, color, bottom, angle }) => {
         legendPosition: 'middle',
         ticks: ticks,
         tickValues: tickValues,
+        color: '#ff073a',
       }}
       axisLeft={{
         orient: 'left',
@@ -43,7 +44,6 @@ const Line = ({ dataFeed, ticks, tickValues, color, bottom, angle }) => {
         legendOffset: -80,
         legendPosition: 'middle',
       }}
-      // colors={{ scheme: color }}
       colors={color}
       lineWidth={3}
       pointSize={6}
@@ -57,6 +57,7 @@ const Line = ({ dataFeed, ticks, tickValues, color, bottom, angle }) => {
       enableArea={true}
       areaBaselineValue={0}
       enableGridX={false}
+      theme={theme}
       legends={[
         {
           anchor: 'top',

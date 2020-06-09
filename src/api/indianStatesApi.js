@@ -25,7 +25,7 @@ const convert = (str) => {
   var date = new Date(str),
     mnth = ('0' + (date.getMonth() + 1)).slice(-2),
     day = ('0' + date.getDate()).slice(-2);
-  return [date.getFullYear(), mnth, day].join('-');
+  return [mnth, day].join('-');
 };
 
 export const parseStateTimeseries = ({ states_daily: data }) => {
@@ -62,7 +62,10 @@ export const parseStateTimeseries = ({ states_daily: data }) => {
           totaldeceased: totaldeceased,
           // Active = Confimed - Recovered - Deceased
           totalactive: totalconfirmed - totalrecovered - totaldeceased,
-          dailyactive: dailyconfirmed - dailyrecovered - dailydeceased,
+          dailyactive:
+            dailyconfirmed - dailyrecovered - dailydeceased > 0
+              ? dailyconfirmed - dailyrecovered - dailydeceased
+              : 0,
         });
       });
     }
@@ -102,25 +105,25 @@ export const fetchStatesDailyData = async (stateName) => {
 
   const active = [
     {
-      id: 'Confirmed',
+      id: 'Active',
       color: 'hsl(101, 70%, 50%)',
-      data: confirmedData,
+      data: activeData,
     },
   ];
 
   const deceased = [
     {
-      id: 'Confirmed',
+      id: 'Deceased',
       color: 'hsl(101, 70%, 50%)',
-      data: confirmedData,
+      data: deceasedData,
     },
   ];
 
   const recovered = [
     {
-      id: 'Confirmed',
+      id: 'Recovered',
       color: 'hsl(101, 70%, 50%)',
-      data: confirmedData,
+      data: recoveredData,
     },
   ];
 
@@ -133,3 +136,5 @@ export const fetchStatesDailyData = async (stateName) => {
     areaName: stateName,
   };
 };
+
+// ========================================= Districts Data Fetching =========================================
