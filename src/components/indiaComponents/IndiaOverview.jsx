@@ -37,7 +37,7 @@ const IndiaOverview = ({ checked }) => {
         dataFeed={checked ? dailyData.dataFeed : totalData.dataFeed}
         ticks={16}
         tickValues={tickValues}
-        color={'category10'}
+        color={['#007bff', '#ff073a', '#28a745']}
         bottom={120}
         angle={45}
       />

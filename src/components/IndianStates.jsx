@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import cx from 'classnames';
+import React, { useState } from 'react';
 
 import IndiaUpdate from './indianStatesComponents/IndiaUpdate';
 import StatesList from './indianStatesComponents/StatesList';
@@ -9,21 +8,21 @@ import DistrictsList from './indianStatesComponents/DistrictsList';
 import styles from '../css/IndianStates.module.css';
 
 const IndianStates = () => {
-  const [clicked, setClicked] = useState('');
+  const [clickedState, setClickedState] = useState('Maharashtra');
 
   const handleStateSelected = (state) => {
-    setClicked(state);
+    setClickedState(state);
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.indiaMap}>
         <IndiaUpdate />
-        <StatesList handleStateSelected={handleStateSelected} state={clicked} />
+        <StatesList handleStateSelected={handleStateSelected} />
       </div>
 
       <div className={styles.indiaInfo}>
-        <GraphsList />
+        <GraphsList clicked={clickedState} />
       </div>
 
       <div className={styles.stateMap}>
