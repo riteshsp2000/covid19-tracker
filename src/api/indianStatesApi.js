@@ -6,6 +6,9 @@ import { utcToZonedTime } from 'date-fns-tz';
 
 const STATES_DATA = 'https://api.covid19india.org/data.json';
 const STATES_DAILY_DATA = 'https://api.covid19india.org/states_daily.json';
+const DISTRICT_ZONES = 'https://api.covid19india.org/zones.json';
+const DISTRICT_DATA =
+  'https://api.covid19india.org/v2/state_district_wise.json';
 
 export const fetchStatesData = async () => {
   const {
@@ -25,7 +28,7 @@ const convert = (str) => {
   var date = new Date(str),
     mnth = ('0' + (date.getMonth() + 1)).slice(-2),
     day = ('0' + date.getDate()).slice(-2);
-  return [date.getFullYear(), mnth, day].join('-');
+  return [mnth, day].join('-');
 };
 
 export const parseStateTimeseries = ({ states_daily: data }) => {
@@ -62,7 +65,10 @@ export const parseStateTimeseries = ({ states_daily: data }) => {
           totaldeceased: totaldeceased,
           // Active = Confimed - Recovered - Deceased
           totalactive: totalconfirmed - totalrecovered - totaldeceased,
-          dailyactive: dailyconfirmed - dailyrecovered - dailydeceased,
+          dailyactive:
+            dailyconfirmed - dailyrecovered - dailydeceased > 0
+              ? dailyconfirmed - dailyrecovered - dailydeceased
+              : 0,
         });
       });
     }
@@ -102,25 +108,25 @@ export const fetchStatesDailyData = async (stateName) => {
 
   const active = [
     {
-      id: 'Confirmed',
+      id: 'Active',
       color: 'hsl(101, 70%, 50%)',
-      data: confirmedData,
+      data: activeData,
     },
   ];
 
   const deceased = [
     {
-      id: 'Confirmed',
+      id: 'Deceased',
       color: 'hsl(101, 70%, 50%)',
-      data: confirmedData,
+      data: deceasedData,
     },
   ];
 
   const recovered = [
     {
-      id: 'Confirmed',
+      id: 'Recovered',
       color: 'hsl(101, 70%, 50%)',
-      data: confirmedData,
+      data: recoveredData,
     },
   ];
 
@@ -132,4 +138,63 @@ export const fetchStatesDailyData = async (stateName) => {
     dates,
     areaName: stateName,
   };
+};
+
+// ========================================= Districts Data Fetching =========================================
+
+export const fetchDistrictsData = async (stateName) => {
+  // const { data } = await axios.get(DISTRICT_LIST_DATA);
+
+  // const districtData = data[STATE_CODES[stateName]]['districts'];
+  // return districtData;
+
+  const { data } = await axios.get(DISTRICT_DATA);
+  data.shift();
+
+  const stateData = data
+    .map((state) => {
+      if (state.state === stateName) {
+        return state;
+      }
+      return null;
+    })
+    .filter(function (element) {
+      return element !== undefined;
+    })
+    .filter(function (el) {
+      return el != null;
+    });
+
+  return stateData[0];
+};
+
+export const fetchDistrictZones = async (stateName) => {
+  const {
+    data: { zones },
+  } = await axios.get(DISTRICT_ZONES);
+
+  let green = [];
+  let red = [];
+  let orange = [];
+
+  zones.map(({ district, state, zone }) => {
+    if (state === stateName) {
+      switch (zone) {
+        case 'Green':
+          green.push(district);
+          break;
+        case 'Orange':
+          orange.push(district);
+          break;
+        case 'Red':
+          red.push(district);
+          break;
+        default:
+          break;
+      }
+    }
+    return null;
+  });
+
+  return { green, red, orange };
 };

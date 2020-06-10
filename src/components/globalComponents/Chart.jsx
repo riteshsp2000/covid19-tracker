@@ -48,7 +48,7 @@ const Chart = ({ data, country }) => {
           dataFeed={dailyData}
           ticks={xValues.ticks}
           tickValues={xValues.tickValues}
-          color={'paired'}
+          color={['#007bff', '#90bff1']}
           bottom={90}
           angle={90}
         />

@@ -143,6 +143,15 @@ td a, .helpLinks li a {
   text-align: center;
 }
 
+#tableHeading tr th, #tableHeading2 tr th {
+  color: #000;
+}
+
+.helpLinks li a {
+  display: block;
+  width: 5rem
+}
+
 @media screen and (max-width: 660px) {
   .helpContainer {
     margin: 0rem;
@@ -165,5 +174,9 @@ td a, .helpLinks li a {
 
   .nationalDetailsDiv {
     height: 100%;
+  }
+
+  .helpTable {
+    height: 40rem;
   }
 }

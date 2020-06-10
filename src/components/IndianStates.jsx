@@ -4,8 +4,10 @@ import IndiaUpdate from './indianStatesComponents/IndiaUpdate';
 import StatesList from './indianStatesComponents/StatesList';
 import GraphsList from './indianStatesComponents/GraphsList';
 import DistrictsList from './indianStatesComponents/DistrictsList';
+import DistrictZones from './indianStatesComponents/DistrictZones';
 
 import styles from '../css/IndianStates.module.css';
+// import { fetchDistrictsData } from '../api/indianStatesApi';
 
 const IndianStates = () => {
   const [clickedState, setClickedState] = useState('Maharashtra');
@@ -13,6 +15,8 @@ const IndianStates = () => {
   const handleStateSelected = (state) => {
     setClickedState(state);
   };
+
+  // fetchDistrictsData(clickedState);
 
   return (
     <div className={styles.container}>
@@ -26,11 +30,12 @@ const IndianStates = () => {
       </div>
 
       <div className={styles.stateMap}>
-        <DistrictsList />
+        <DistrictsList stateName={clickedState} />
       </div>
 
       <div className={styles.stateInfo}>
-        <h1>Helllllo</h1>
+        <h2>District Zones</h2>
+        <DistrictZones stateName={clickedState} />
       </div>
     </div>
   );
