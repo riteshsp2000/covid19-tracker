@@ -156,9 +156,13 @@ export const fetchDistrictsData = async (stateName) => {
       if (state.state === stateName) {
         return state;
       }
+      return null;
     })
     .filter(function (element) {
       return element !== undefined;
+    })
+    .filter(function (el) {
+      return el != null;
     });
 
   return stateData[0];
@@ -178,13 +182,18 @@ export const fetchDistrictZones = async (stateName) => {
       switch (zone) {
         case 'Green':
           green.push(district);
+          break;
         case 'Orange':
           orange.push(district);
+          break;
         case 'Red':
           red.push(district);
+          break;
+        default:
+          break;
       }
     }
-    return;
+    return null;
   });
 
   return { green, red, orange };

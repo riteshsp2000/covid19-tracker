@@ -43,7 +43,7 @@ const GraphsList = ({ clicked }) => {
 
   return (
     <div className={styles.graphListParentDiv}>
-      <h1>{area.areaName}</h1>
+      <h2>{area.areaName}</h2>
       <div className={styles.graphsListContainer}>
         <div className={cx(styles.confirmedDiv, styles.boxSizing)}>
           <div className={styles.displayGraph}>
@@ -100,8 +100,6 @@ const GraphsList = ({ clicked }) => {
             />
           </div>
         </div>
-
-        <div className={cx(styles.testedDiv, styles.boxSizing)}>asjfkldsjl</div>
       </div>
     </div>
   );
