@@ -22,7 +22,7 @@ const Chart = ({ data, country }) => {
   const calculateTicks = () => {
     if (!dailyData.date) return null;
 
-    const tickValues = dailyData.date.filter((_, i) => !(i % 8));
+    const tickValues = dailyData.date.filter((_, i) => !(i % 10));
     const ticks = tickValues.length;
     return { tickValues, ticks };
   };

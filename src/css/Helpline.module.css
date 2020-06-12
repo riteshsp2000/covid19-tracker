@@ -135,8 +135,25 @@ td a, .helpLinks li a {
   margin: 0.5rem auto;
 }
 
+.helpLinks li div {
+  width: 100%;
+}
+
 .helpLinks li p {
   width: 100%;
+  text-align: center;
+}
+
+.helpLinks li p a {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 520px) {
+  .overflowLinksDiv {
+    overflow-x: hidden;
+  }
 }
 
 .links h2 {

@@ -35,7 +35,7 @@ const DistrictsList = ({ stateName }) => {
       }
     );
   };
-  console.log(window.innerWidth);
+
   const renderTableHeadings = () => {
     if (window.screen.size > 660) {
       return (
