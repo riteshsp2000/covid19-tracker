@@ -7,7 +7,7 @@ import MyResponsiveBar from '../graphs/Bar';
 
 const Chart = ({ data, country }) => {
   // Declaration of dailyData hook and initializing on page load to fetch Graph Data
-  const [dailyData, setDailyData] = useState([]);
+  const [dailyData, setDailyData] = useState({});
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -16,26 +16,15 @@ const Chart = ({ data, country }) => {
 
     fetchAPI();
   }, []);
+
   // ================================================================================
 
-  // Logic to calculate the number of ticks and tickvalues to be displayed in the graph
   const calculateTicks = () => {
-    const confirmedObject = dailyData[0];
-    if (!confirmedObject) {
-      return null;
-    }
+    if (!dailyData.date) return null;
 
-    const confirmedArray = confirmedObject.data;
-    if (!confirmedArray) {
-      return null;
-    }
-
-    const ticks = confirmedArray.length;
-    const tickValues = confirmedArray
-      .map(({ x }) => x)
-      .filter((_, i) => !(i % 6));
-
-    return { ticks, tickValues };
+    const tickValues = dailyData.date.filter((_, i) => !(i % 10));
+    const ticks = tickValues.length;
+    return { tickValues, ticks };
   };
   const xValues = calculateTicks();
   // ================================================================================
@@ -43,15 +32,24 @@ const Chart = ({ data, country }) => {
   // Declaring a Line Chart with appropriate Data and scales
   const lineChart =
     xValues != null ? (
-      <div className={styles.displayGraph}>
-        <Line
-          dataFeed={dailyData}
-          ticks={xValues.ticks}
-          tickValues={xValues.tickValues}
-          color={['#007bff', '#90bff1']}
-          bottom={90}
-          angle={90}
-        />
+      <div className={styles.mainGraphHeading}>
+        <h2>
+          {!country || country === 'global'
+            ? 'World Covid-19 Statistics'
+            : country}
+        </h2>
+        <div className={styles.displayGraph}>
+          <Line
+            dataFeed={dailyData.dataFinalFeed}
+            ticks={xValues.ticks}
+            tickValues={xValues.tickValues}
+            color={{ scheme: 'category10' }}
+            bottom={90}
+            angle={45}
+            legendX={'Dates'}
+            legendY={'Number of cases'}
+          />
+        </div>
       </div>
     ) : null;
 

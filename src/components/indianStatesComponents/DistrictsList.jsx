@@ -6,6 +6,7 @@ import MoonLoading from '../utils/MoonLoader';
 
 const DistrictsList = ({ stateName }) => {
   const [districtData, setDistrictData] = useState({});
+  const [windowWidth, setWindowWidth] = useState();
 
   useEffect(() => {
     const fetchDistrictApi = async () => {
@@ -14,6 +15,10 @@ const DistrictsList = ({ stateName }) => {
 
     fetchDistrictApi();
   }, [stateName]);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+  }, []);
 
   const renderDistrictsList = () => {
     return districtData.districtData.map(
@@ -46,7 +51,7 @@ const DistrictsList = ({ stateName }) => {
 
     return (
       <tr>
-        <th className={styles.columnWidth}>Distict</th>
+        <th className={styles.columnWidth}>District</th>
         <th>C</th>
         <th>A</th>
         <th>D</th>
