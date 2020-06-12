@@ -502,8 +502,7 @@ const Helpline = () => {
               HELPLINE NUMBERS (by State)
               <br />
               <a href='https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf'>
-                https://www.mohfw.gov.in/coronvavirus
-                {window.screen.size > 660 ? '' : <br />}helplinenumber.pdf
+                https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf
               </a>
             </p>
           </li>
@@ -528,8 +527,7 @@ const Helpline = () => {
               WHO : COVID-19 Guidelines
               <br />
               <a href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019'>
-                https://www.who.int/emergencies/diseases
-                {window.screen.size > 660 ? '' : <br />}/novel-coronavirus-2019
+                https://www.who.int/emergencies/diseases/novel-coronavirus-2019
               </a>
             </p>
           </li>
@@ -548,7 +546,6 @@ const Helpline = () => {
               <br />
               <a href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters'>
                 https://www.who.int/emergencies/diseases/
-                {window.screen.size > 660 ? '' : <br />}
                 novel-coronavirus-2019/advice-for-public/myth-busters
               </a>
             </p>

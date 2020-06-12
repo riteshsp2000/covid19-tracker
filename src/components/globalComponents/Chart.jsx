@@ -32,15 +32,24 @@ const Chart = ({ data, country }) => {
   // Declaring a Line Chart with appropriate Data and scales
   const lineChart =
     xValues != null ? (
-      <div className={styles.displayGraph}>
-        <Line
-          dataFeed={dailyData.dataFinalFeed}
-          ticks={xValues.ticks}
-          tickValues={xValues.tickValues}
-          color={{ scheme: 'category10' }}
-          bottom={90}
-          angle={45}
-        />
+      <div className={styles.mainGraphHeading}>
+        <h2>
+          {!country || country === 'global'
+            ? 'World Covid-19 Statistics'
+            : country}
+        </h2>
+        <div className={styles.displayGraph}>
+          <Line
+            dataFeed={dailyData.dataFinalFeed}
+            ticks={xValues.ticks}
+            tickValues={xValues.tickValues}
+            color={{ scheme: 'category10' }}
+            bottom={90}
+            angle={45}
+            legendX={'Dates'}
+            legendY={'Number of cases'}
+          />
+        </div>
       </div>
     ) : null;
 

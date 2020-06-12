@@ -20,6 +20,10 @@
   width: 100%;
 }
 
+.mainGraphHeading {
+  width: 100%;
+}
+
 @media screen and (max-width: 480px) {
   .container {
     width: 120%;
