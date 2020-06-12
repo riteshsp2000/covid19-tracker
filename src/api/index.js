@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const url = 'https://covid19.mathdro.id/api';
+const url2 = 'https://corona-api.com/timeline';
 
 // Function to fetch the Cards Data as well as individual country Data
 export const fetchData = async (country) => {
@@ -22,53 +23,6 @@ export const fetchData = async (country) => {
 };
 // ================================================================================
 
-// Function to fetch the daily Data for the global graph and then modifing the data to return in the appropriate form
-export const fetchDailyData = async () => {
-  try {
-    const { data } = await axios.get(`${url}/daily`);
-
-    const modifiedData = data.map(({ confirmed, deaths, reportDate }) => ({
-      confirmed: confirmed.total,
-      deaths: deaths.total,
-      date: reportDate,
-    }));
-
-    const date = modifiedData.map(({ date }) => date);
-    const confirmed = modifiedData.map(({ confirmed }) => confirmed);
-    const deaths = modifiedData.map(({ deaths }) => deaths);
-
-    const finalDataConfirmed = confirmed.map((confirmed, index) => {
-      return {
-        x: date[index],
-        y: confirmed,
-      };
-    });
-
-    const finalDataDeaths = deaths.map((deaths, index) => {
-      return {
-        x: date[index],
-        y: deaths,
-      };
-    });
-
-    const dataFinalFeed = [
-      {
-        id: 'Confirmed',
-        color: 'hsl(273, 70%, 50%)',
-        data: finalDataConfirmed,
-      },
-      {
-        id: 'Deaths',
-        color: 'hsl(127, 70%, 50%)',
-        data: finalDataDeaths,
-      },
-    ];
-
-    return dataFinalFeed;
-  } catch (error) {
-    console.log(error);
-  }
-};
 // ================================================================================
 
 // Function to fetch a list of countries
@@ -84,3 +38,59 @@ export const fetchedCountriesList = async () => {
   }
 };
 // ================================================================================
+
+export const fetchDailyData = async () => {
+  try {
+    const {
+      data: { data },
+    } = await axios.get(url2);
+
+    const date = data.map(({ date }) => date).reverse();
+    const confirmed = data.map(({ confirmed }) => confirmed).reverse();
+    const deaths = data.map(({ deaths }) => deaths).reverse();
+    const recovered = data.map(({ recovered }) => recovered).reverse();
+
+    const finalDataConfirmed = confirmed.map((confirmed, index) => {
+      return {
+        x: date[index],
+        y: confirmed,
+      };
+    });
+
+    const finalDataDeaths = deaths.map((deaths, index) => {
+      return {
+        x: date[index],
+        y: deaths,
+      };
+    });
+
+    const finalDataRecovered = recovered.map((deaths, index) => {
+      return {
+        x: date[index],
+        y: deaths,
+      };
+    });
+
+    const dataFinalFeed = [
+      {
+        id: 'Confirmed',
+        color: 'hsl(273, 70%, 50%)',
+        data: finalDataConfirmed,
+      },
+      {
+        id: 'Deceased',
+        color: 'hsl(127, 70%, 50%)',
+        data: finalDataDeaths,
+      },
+      {
+        id: 'Recovered',
+        color: 'hsl(127, 70%, 50%)',
+        data: finalDataRecovered,
+      },
+    ];
+
+    return { dataFinalFeed, date };
+  } catch (error) {
+    console.log(error);
+  }
+};

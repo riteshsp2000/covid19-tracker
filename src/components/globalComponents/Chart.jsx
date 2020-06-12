@@ -7,7 +7,7 @@ import MyResponsiveBar from '../graphs/Bar';
 
 const Chart = ({ data, country }) => {
   // Declaration of dailyData hook and initializing on page load to fetch Graph Data
-  const [dailyData, setDailyData] = useState([]);
+  const [dailyData, setDailyData] = useState({});
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -16,26 +16,15 @@ const Chart = ({ data, country }) => {
 
     fetchAPI();
   }, []);
+
   // ================================================================================
 
-  // Logic to calculate the number of ticks and tickvalues to be displayed in the graph
   const calculateTicks = () => {
-    const confirmedObject = dailyData[0];
-    if (!confirmedObject) {
-      return null;
-    }
+    if (!dailyData.date) return null;
 
-    const confirmedArray = confirmedObject.data;
-    if (!confirmedArray) {
-      return null;
-    }
-
-    const ticks = confirmedArray.length;
-    const tickValues = confirmedArray
-      .map(({ x }) => x)
-      .filter((_, i) => !(i % 6));
-
-    return { ticks, tickValues };
+    const tickValues = dailyData.date.filter((_, i) => !(i % 8));
+    const ticks = tickValues.length;
+    return { tickValues, ticks };
   };
   const xValues = calculateTicks();
   // ================================================================================
@@ -45,12 +34,12 @@ const Chart = ({ data, country }) => {
     xValues != null ? (
       <div className={styles.displayGraph}>
         <Line
-          dataFeed={dailyData}
+          dataFeed={dailyData.dataFinalFeed}
           ticks={xValues.ticks}
           tickValues={xValues.tickValues}
-          color={['#007bff', '#90bff1']}
+          color={{ scheme: 'category10' }}
           bottom={90}
-          angle={90}
+          angle={45}
         />
       </div>
     ) : null;

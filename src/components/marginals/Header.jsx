@@ -26,7 +26,6 @@ const Headers = () => {
             to='/'
             className={styles.link}
             activeClassName={styles.activeClass}
-            onClick={() => handleMenuToggle()}
           >
             Global
           </NavLink>
@@ -37,7 +36,6 @@ const Headers = () => {
             className={styles.link}
             exact
             activeClassName={styles.activeClass}
-            onClick={() => handleMenuToggle()}
           >
             India
           </NavLink>
@@ -48,7 +46,6 @@ const Headers = () => {
             exact
             className={styles.link}
             activeClassName={styles.activeClass}
-            onClick={() => handleMenuToggle()}
           >
             Indian States
           </NavLink>
@@ -59,7 +56,6 @@ const Headers = () => {
             exact
             className={styles.link}
             activeClassName={styles.activeClass}
-            onClick={() => handleMenuToggle()}
           >
             Helpline
           </NavLink>
