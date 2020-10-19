@@ -10,19 +10,19 @@ const Footer = ({ scrollToTop }) => {
         <h5>Stay Safe</h5>
       </div>
       <div className={cx(styles.box, styles.icons)}>
-        <a href='https://github.com/riteshsp2000'>
+        <a href='https://github.com/shreyasmali'>
           <i className={cx(styles.fas, 'fab fa-github fa-2x')}></i>
         </a>
         <a href='https://covid19.mathdro.id/api'>
           <i className={cx(styles.fas, 'fas fa-server fa-2x')}></i>
         </a>
-        <a href='https://github.com/riteshsp2000/covid19-tracker'>
+        <a href='https://github.com/shreyasmali/covid19-tracker'>
           <i className={cx(styles.fas, 'fas fa-code fa-2x')}></i>
         </a>
       </div>
       <div className={cx(styles.box, styles.hello)}>
         <h5>Say Hello</h5>
-        <h5>riteshp2000@gmail.com</h5>
+        <h5>shreyasmali001@gmail.com</h5>
       </div>
       <i
         onClick={() => scrollToTop()}
