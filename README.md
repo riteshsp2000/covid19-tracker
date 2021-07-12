@@ -1,6 +1,6 @@
-<p>
-      <img src="https://img.shields.io/badge/client--side-React.js-blue">
-</p>
+<img src="https://img.shields.io/badge/client--side-React.js-blue">
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/81d1cb51-457d-4082-ad57-c89a1911a02f/deploy-status)](https://app.netlify.com/sites/covid-investigator/deploys)
 
 ## Covid-19 Tracker
 
