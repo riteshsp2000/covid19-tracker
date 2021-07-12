@@ -6,7 +6,7 @@ import MoonLoading from "../utils/MoonLoader";
 
 const DistrictsList = ({ stateName }) => {
   const [districtData, setDistrictData] = useState({});
-  const [setWindowWidth] = useState();
+  const [,setWindowWidth] = useState();
 
   useEffect(() => {
     const fetchDistrictApi = async () => {
