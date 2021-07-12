@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { fetchTotalData, fetchDailyData } from '../../api/indiaApi';
-import styles from '../../css/India.module.css';
-import MoonLoading from '../utils/MoonLoader';
-import Line from '../graphs/Line';
+import { fetchTotalData, fetchDailyData } from "../../api/indiaApi";
+import styles from "../../css/India.module.css";
+import MoonLoading from "../utils/MoonLoader";
+import Line from "../graphs/Line";
 
 const IndiaOverview = ({ checked }) => {
   // Fetching the Daily and Total data when the component loads
@@ -37,7 +37,7 @@ const IndiaOverview = ({ checked }) => {
         dataFeed={checked ? dailyData.dataFeed : totalData.dataFeed}
         ticks={16}
         tickValues={tickValues}
-        color={['#007bff', '#ff073a', '#28a745']}
+        color={["#007bff", "#ff073a", "#28a745"]}
         bottom={120}
         angle={45}
       />

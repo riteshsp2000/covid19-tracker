@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { fetchDailyData } from '../../api';
-import styles from '../../css/Chart.module.css';
-import Line from '../graphs/Line';
-import MyResponsiveBar from '../graphs/Bar';
+import { fetchDailyData } from "../../api";
+import styles from "../../css/Chart.module.css";
+import Line from "../graphs/Line";
+import MyResponsiveBar from "../graphs/Bar";
 
 const Chart = ({ data, country }) => {
   // Declaration of dailyData hook and initializing on page load to fetch Graph Data
@@ -34,8 +34,8 @@ const Chart = ({ data, country }) => {
     xValues != null ? (
       <div className={styles.mainGraphHeading}>
         <h2>
-          {!country || country === 'global'
-            ? 'World Covid-19 Statistics'
+          {!country || country === "global"
+            ? "World Covid-19 Statistics"
             : country}
         </h2>
         <div className={styles.displayGraph}>
@@ -43,11 +43,11 @@ const Chart = ({ data, country }) => {
             dataFeed={dailyData.dataFinalFeed}
             ticks={xValues.ticks}
             tickValues={xValues.tickValues}
-            color={{ scheme: 'category10' }}
+            color={{ scheme: "category10" }}
             bottom={90}
             angle={45}
-            legendX={'Dates'}
-            legendY={'Number of cases'}
+            legendX={"Dates"}
+            legendY={"Number of cases"}
           />
         </div>
       </div>
@@ -59,19 +59,19 @@ const Chart = ({ data, country }) => {
   const barData = data.confirmed
     ? [
         {
-          type: 'Infected',
+          type: "Infected",
           count: data.confirmed.value,
-          'hot dogColor': 'hsl(101, 70%, 50%)',
+          "hot dogColor": "hsl(101, 70%, 50%)",
         },
         {
-          type: 'Deaths',
+          type: "Deaths",
           count: data.deaths.value,
-          'hot dogColor': 'hsl(101, 70%, 50%)',
+          "hot dogColor": "hsl(101, 70%, 50%)",
         },
         {
-          type: 'Recovered',
+          type: "Recovered",
           count: data.recovered.value,
-          'hot dogColor': 'hsl(101, 70%, 50%)',
+          "hot dogColor": "hsl(101, 70%, 50%)",
         },
       ]
     : null;
@@ -83,14 +83,14 @@ const Chart = ({ data, country }) => {
       <MyResponsiveBar
         dataFeed={barData}
         country={country}
-        keys={['count']}
-        indexBy={'type'}
+        keys={["count"]}
+        indexBy={"type"}
         right={50}
-        color={'paired'}
+        color={"paired"}
         legend={[]}
-        colorBy={'index'}
-        groupMode={'stacked'}
-        layout={'vertical'}
+        colorBy={"index"}
+        groupMode={"stacked"}
+        layout={"vertical"}
       />
     </div>
   ) : null;

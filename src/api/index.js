@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
-const url = 'https://covid19.mathdro.id/api';
-const url2 = 'https://corona-api.com/timeline';
+const url = "https://covid19.mathdro.id/api";
+const url2 = "https://corona-api.com/timeline";
 
 // Function to fetch the Cards Data as well as individual country Data
 export const fetchData = async (country) => {
@@ -73,18 +73,18 @@ export const fetchDailyData = async () => {
 
     const dataFinalFeed = [
       {
-        id: 'Confirmed',
-        color: 'hsl(273, 70%, 50%)',
+        id: "Confirmed",
+        color: "hsl(273, 70%, 50%)",
         data: finalDataConfirmed,
       },
       {
-        id: 'Deceased',
-        color: 'hsl(127, 70%, 50%)',
+        id: "Deceased",
+        color: "hsl(127, 70%, 50%)",
         data: finalDataDeaths,
       },
       {
-        id: 'Recovered',
-        color: 'hsl(127, 70%, 50%)',
+        id: "Recovered",
+        color: "hsl(127, 70%, 50%)",
         data: finalDataRecovered,
       },
     ];

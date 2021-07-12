@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import cx from 'classnames';
+import React, { useState, useEffect } from "react";
+import cx from "classnames";
 
-import { fetchStatesData } from '../../api/indianStatesApi';
-import MoonLoading from '../utils/MoonLoader';
-import styles from '../../css/IndianStates.module.css';
+import { fetchStatesData } from "../../api/indianStatesApi";
+import MoonLoading from "../utils/MoonLoader";
+import styles from "../../css/IndianStates.module.css";
 
 const IndiaUpdate = () => {
   const [updates, setUpdates] = useState({});

@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
-const UPDATES_URL = 'https://api.covid19india.org/updatelog/log.json';
-const DAILY_DATA = 'https://api.covid19india.org/data.json';
-const RAW_PATIENT_DATA = 'https://api.covid19india.org/raw_data5.json';
+const UPDATES_URL = "https://api.covid19india.org/updatelog/log.json";
+const DAILY_DATA = "https://api.covid19india.org/data.json";
+const RAW_PATIENT_DATA = "https://api.covid19india.org/raw_data5.json";
 
 // Function to fetch a list of Latest Updates
 export const fetchUpdates = async () => {
@@ -52,18 +52,18 @@ export const fetchDailyData = async () => {
 
     const dataFeed = [
       {
-        id: 'Confirmed',
-        color: 'hsl(101, 70%, 50%)',
+        id: "Confirmed",
+        color: "hsl(101, 70%, 50%)",
         data: totalConfirmed,
       },
       {
-        id: 'Deceased',
-        color: 'hsl(101, 70%, 50%)',
+        id: "Deceased",
+        color: "hsl(101, 70%, 50%)",
         data: totalDeceased,
       },
       {
-        id: 'Recovered',
-        color: 'hsl(101, 70%, 50%)',
+        id: "Recovered",
+        color: "hsl(101, 70%, 50%)",
         data: totalRecovered,
       },
     ];
@@ -114,18 +114,18 @@ export const fetchTotalData = async () => {
 
     const dataFeed = [
       {
-        id: 'Confirmed',
-        color: 'hsl(101, 70%, 50%)',
+        id: "Confirmed",
+        color: "hsl(101, 70%, 50%)",
         data: totalConfirmed,
       },
       {
-        id: 'Deceased',
-        color: 'hsl(101, 70%, 50%)',
+        id: "Deceased",
+        color: "hsl(101, 70%, 50%)",
         data: totalDeceased,
       },
       {
-        id: 'Recovered',
-        color: 'hsl(101, 70%, 50%)',
+        id: "Recovered",
+        color: "hsl(101, 70%, 50%)",
         data: totalRecovered,
       },
     ];
@@ -150,7 +150,7 @@ export const fetchTestedData = async () => {
     const date = tested
       .map(({ updatetimestamp }) => updatetimestamp)
       .map((date) => {
-        const splitDate = date.split(' ');
+        const splitDate = date.split(" ");
         return splitDate[0];
       });
 
@@ -165,8 +165,8 @@ export const fetchTestedData = async () => {
 
     const finalData = [
       {
-        id: 'Tests Performed',
-        color: 'hsl(101, 70%, 50%)',
+        id: "Tests Performed",
+        color: "hsl(101, 70%, 50%)",
         data: testedArray,
       },
     ];
@@ -186,18 +186,18 @@ export const fetchMonthlyData = async () => {
   const dailyData = data.cases_time_series;
 
   let MONTHS = [
-    { month: 'January', confirmed: 0, dead: 0, recovered: 0 },
-    { month: 'February', confirmed: 0, dead: 0, recovered: 0 },
-    { month: 'March', confirmed: 0, dead: 0, recovered: 0 },
-    { month: 'April', confirmed: 0, dead: 0, recovered: 0 },
-    { month: 'May', confirmed: 0, dead: 0, recovered: 0 },
-    { month: 'June', confirmed: 0, dead: 0, recovered: 0 },
-    { month: 'July', confirmed: 0, dead: 0, recovered: 0 },
-    { month: 'August', confirmed: 0, dead: 0, recovered: 0 },
-    { month: 'September', confirmed: 0, dead: 0, recovered: 0 },
-    { month: 'October', confirmed: 0, dead: 0, recovered: 0 },
-    { month: 'November', confirmed: 0, dead: 0, recovered: 0 },
-    { month: 'December', confirmed: 0, dead: 0, recovered: 0 },
+    { month: "January", confirmed: 0, dead: 0, recovered: 0 },
+    { month: "February", confirmed: 0, dead: 0, recovered: 0 },
+    { month: "March", confirmed: 0, dead: 0, recovered: 0 },
+    { month: "April", confirmed: 0, dead: 0, recovered: 0 },
+    { month: "May", confirmed: 0, dead: 0, recovered: 0 },
+    { month: "June", confirmed: 0, dead: 0, recovered: 0 },
+    { month: "July", confirmed: 0, dead: 0, recovered: 0 },
+    { month: "August", confirmed: 0, dead: 0, recovered: 0 },
+    { month: "September", confirmed: 0, dead: 0, recovered: 0 },
+    { month: "October", confirmed: 0, dead: 0, recovered: 0 },
+    { month: "November", confirmed: 0, dead: 0, recovered: 0 },
+    { month: "December", confirmed: 0, dead: 0, recovered: 0 },
   ];
 
   dailyData.forEach((data) => {
@@ -229,7 +229,7 @@ export const fetchStateData = async () => {
   });
 
   const index = topAffected.map((object) => {
-    if (object.id === 'State Unassigned') {
+    if (object.id === "State Unassigned") {
       return topAffected.indexOf(object);
     }
     return null;
@@ -248,8 +248,8 @@ export const fetchStateData = async () => {
     .reduce((a, b) => a + b);
 
   topAffected.push({
-    id: 'others',
-    label: 'others',
+    id: "others",
+    label: "others",
     value: otherStatesSum,
   });
 
@@ -263,7 +263,7 @@ export const fetchAgeData = async () => {
 
   const ageArray = raw_data
     .map(({ agebracket }) => {
-      if (agebracket === '') return null;
+      if (agebracket === "") return null;
       return parseInt(agebracket, 10);
     })
     .filter((x) => x)
@@ -282,46 +282,46 @@ export const fetchAgeData = async () => {
 
   const finalData = {
     root: {
-      name: 'All People',
+      name: "All People",
       children: [
         {
-          name: '0-10 yrs',
+          name: "0-10 yrs",
           loc: ages[0],
         },
         {
-          name: '10-20 yrs',
+          name: "10-20 yrs",
           loc: ages[1],
         },
         {
-          name: '20-30 yrs',
+          name: "20-30 yrs",
           loc: ages[2],
         },
         {
-          name: '30-40 yrs',
+          name: "30-40 yrs",
           loc: ages[3],
         },
         {
-          name: '40-50 yrs',
+          name: "40-50 yrs",
           loc: ages[4],
         },
         {
-          name: '50-60 yrs',
+          name: "50-60 yrs",
           loc: ages[5],
         },
         {
-          name: '60-70 yrs',
+          name: "60-70 yrs",
           loc: ages[6],
         },
         {
-          name: '70-80 yrs',
+          name: "70-80 yrs",
           loc: ages[7],
         },
         {
-          name: '80-90 yrs',
+          name: "80-90 yrs",
           loc: ages[9],
         },
         {
-          name: '90-100 yrs',
+          name: "90-100 yrs",
           loc: ages[9],
         },
       ],

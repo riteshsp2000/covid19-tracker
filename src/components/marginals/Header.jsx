@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-import styles from '../../css/Header.module.css';
-import image from '../../img/title-image.png';
+import styles from "../../css/Header.module.css";
+import image from "../../img/title-image.png";
 
 const Headers = () => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -18,12 +18,12 @@ const Headers = () => {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.imgDiv}>
-        <img src={image} alt='Icon' className={styles.headerImage} />
+        <img src={image} alt="Icon" className={styles.headerImage} />
       </div>
       <ul className={menuToggle ? styles.ulHeaderExpand : styles.ulHeader}>
         <li className={styles.navLinks}>
           <NavLink
-            to='/'
+            to="/"
             className={styles.link}
             activeClassName={styles.activeClass}
           >
@@ -32,7 +32,7 @@ const Headers = () => {
         </li>
         <li className={styles.navLinks}>
           <NavLink
-            to='/india'
+            to="/india"
             className={styles.link}
             exact
             activeClassName={styles.activeClass}
@@ -42,7 +42,7 @@ const Headers = () => {
         </li>
         <li className={styles.navLinks}>
           <NavLink
-            to='/indianStates'
+            to="/indianStates"
             exact
             className={styles.link}
             activeClassName={styles.activeClass}
@@ -52,7 +52,7 @@ const Headers = () => {
         </li>
         <li className={styles.navLinks}>
           <NavLink
-            to='/helpline'
+            to="/helpline"
             exact
             className={styles.link}
             activeClassName={styles.activeClass}
@@ -62,7 +62,7 @@ const Headers = () => {
         </li>
       </ul>
       <button className={styles.menu} onClick={() => handleMenuToggle()}>
-        <i className='fas fa-bars fa-3x'></i>
+        <i className="fas fa-bars fa-3x"></i>
       </button>
     </div>
   );

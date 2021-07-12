@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { formatDistance } from 'date-fns';
+import React, { useState, useEffect } from "react";
+import { formatDistance } from "date-fns";
 
-import { fetchUpdates } from '../../api/indiaApi';
-import MoonLoading from '../utils/MoonLoader';
-import styles from '../../css/India.module.css';
+import { fetchUpdates } from "../../api/indiaApi";
+import MoonLoading from "../utils/MoonLoader";
+import styles from "../../css/India.module.css";
 
 const NewsSection = () => {
   // Initializing the State to fetch the Updates when the component loads
@@ -25,9 +25,9 @@ const NewsSection = () => {
         <div className={styles.update} key={timestamp}>
           <h3 className={styles.title}>{update}</h3>
           <h5 className={styles.time}>
-            {'Updated ' +
+            {"Updated " +
               formatDistance(new Date(timestamp * 1000), new Date()) +
-              ' ago'}
+              " ago"}
           </h5>
         </div>
       );
@@ -45,7 +45,7 @@ const NewsSection = () => {
   }
 
   return (
-    <div className={styles.newsContainer} id='news-scroll-container'>
+    <div className={styles.newsContainer} id="news-scroll-container">
       {renderUpdates()}
     </div>
   );

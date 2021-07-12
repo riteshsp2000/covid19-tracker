@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import cx from 'classnames';
+import React, { useState, useEffect } from "react";
+import cx from "classnames";
 
-import styles from '../../css/India.module.css';
+import styles from "../../css/India.module.css";
 import {
   fetchTestedData,
   fetchMonthlyData,
   fetchStateData,
   fetchAgeData,
-} from '../../api/indiaApi';
+} from "../../api/indiaApi";
 
-import MyResponsivePie from '../graphs/Pie';
-import Line from '../graphs/Line';
-import MyResponsiveBar from '../graphs/Bar';
-import MyResponsiveTreeMap from '../graphs/TreeMap';
-import MoonLoading from '../utils/MoonLoader';
+import MyResponsivePie from "../graphs/Pie";
+import Line from "../graphs/Line";
+import MyResponsiveBar from "../graphs/Bar";
+import MyResponsiveTreeMap from "../graphs/TreeMap";
+import MoonLoading from "../utils/MoonLoader";
 
 const DeepDive = () => {
   // Initializing state and fetching the required data when the component loads
@@ -69,7 +69,7 @@ const DeepDive = () => {
             dataFeed={tests.finalData}
             ticks={10}
             tickValues={tickValuesTests}
-            color={'#1f19a2'}
+            color={"#1f19a2"}
             bottom={80}
             angle={45}
           />
@@ -83,13 +83,13 @@ const DeepDive = () => {
         ) : (
           <MyResponsiveBar
             dataFeed={monthlyData}
-            keys={['dead', 'confirmed', 'recovered']}
-            indexBy={'month'}
+            keys={["dead", "confirmed", "recovered"]}
+            indexBy={"month"}
             right={25}
-            color={'set1'}
-            colorBy={'id'}
-            groupMode={'stacked'}
-            layout={'horizontal'}
+            color={"set1"}
+            colorBy={"id"}
+            groupMode={"stacked"}
+            layout={"horizontal"}
           />
         )}
         <h5 className={styles.ddGraphTitle}>Cases by Months</h5>

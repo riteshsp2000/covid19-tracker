@@ -1,8 +1,8 @@
-import React from 'react';
-import FadeLoader from 'react-spinners/FadeLoader';
-import { css } from '@emotion/core';
+import React from "react";
+import FadeLoader from "react-spinners/FadeLoader";
+import { css } from "@emotion/core";
 
-import styles from '../../css/Cards.module.css';
+import styles from "../../css/Cards.module.css";
 
 const override = css`
   display: block;
@@ -14,7 +14,7 @@ const Loading = ({ radius, height, width, margin }) => {
     <div className={styles.loader}>
       <FadeLoader
         css={override}
-        color={'#000000'}
+        color={"#000000"}
         loading={true}
         radius={radius}
         height={height}

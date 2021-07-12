@@ -1,6 +1,6 @@
-.box{
+.box {
   background: #fff;
-  box-shadow: 0px 4px 10px 4px rgb(0,0,0,0.14);
+  box-shadow: 0px 4px 10px 4px rgb(0, 0, 0, 0.14);
   text-align: center;
   border-radius: 10px;
 }
@@ -13,16 +13,16 @@
   grid-auto-rows: 5rem;
   grid-gap: 2rem;
   grid-template-areas:
-  "state state state state national national"
-  "state state state state national national"
-  "state state state state national national"
-  "state state state state national national"
-  "state state state state national national"
-  "state state state state national national"
-  "links links links links links links"
-  "links links links links links links"
-  "links links links links links links"
-  "links links links links links links"
+    "state state state state national national"
+    "state state state state national national"
+    "state state state state national national"
+    "state state state state national national"
+    "state state state state national national"
+    "state state state state national national"
+    "links links links links links links"
+    "links links links links links links"
+    "links links links links links links"
+    "links links links links links links";
 }
 
 .stateDetails {
@@ -40,7 +40,7 @@
 h2 {
   margin: 5px;
   padding: 5px;
-  border-bottom: 2px solid #D0D0D0;
+  border-bottom: 2px solid #d0d0d0;
   font-size: 1.2rem;
   text-align: left;
 }
@@ -53,7 +53,7 @@ h2 {
   align-items: center;
 }
 
-.nationalDetailsDiv div{
+.nationalDetailsDiv div {
   margin-bottom: 3rem;
 }
 
@@ -76,17 +76,13 @@ h2 {
 }
 
 #twitter {
-  color:  #00acee;
+  color: #00acee;
 }
 
 #facebook {
   color: #3b5998;
   margin-left: 1.2rem;
 }
-
-
-
-
 
 .helpTable {
   height: 35rem;
@@ -99,10 +95,10 @@ h2 {
 .helpTable::-webkit-scrollbar {
   width: 6px;
   background-color: #fff;
-} 
+}
 
 .helpTable::-webkit-scrollbar-thumb {
-  background-color:	#A8A8A8;
+  background-color: #a8a8a8;
   border-radius: 2px;
 }
 
@@ -112,14 +108,16 @@ h2 {
 
 .helplineTable {
   width: 100%;
-  border-bottom: 2px solid #D0D0D0;
+  border-bottom: 2px solid #d0d0d0;
 }
 
-th, td {
+th,
+td {
   text-align: center;
 }
 
-td a, .helpLinks li a {
+td a,
+.helpLinks li a {
   color: #00818a;
 }
 
@@ -160,13 +158,14 @@ td a, .helpLinks li a {
   text-align: center;
 }
 
-#tableHeading tr th, #tableHeading2 tr th {
+#tableHeading tr th,
+#tableHeading2 tr th {
   color: #000;
 }
 
 .helpLinks li a {
   display: block;
-  width: 5rem
+  width: 5rem;
 }
 
 @media screen and (max-width: 660px) {
@@ -178,15 +177,15 @@ td a, .helpLinks li a {
     grid-auto-rows: 10rem;
     grid-gap: 2rem;
     grid-template-areas:
-    "state state state"
-    "state state state"
-    "state state state"
-    "state state state"
-    "national national national"
-    "national national national"
-    "links links links"
-    "links links links"
-    "links links links"
+      "state state state"
+      "state state state"
+      "state state state"
+      "state state state"
+      "national national national"
+      "national national national"
+      "links links links"
+      "links links links"
+      "links links links";
   }
 
   .nationalDetailsDiv {

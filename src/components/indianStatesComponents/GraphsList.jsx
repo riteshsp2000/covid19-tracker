@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import cx from 'classnames';
+import React, { useState, useEffect } from "react";
+import cx from "classnames";
 
-import { fetchStatesDailyData } from '../../api/indianStatesApi';
-import styles from '../../css/IndianStates.module.css';
-import MoonLoading from '../utils/MoonLoader';
-import Line from '../graphs/Line';
+import { fetchStatesDailyData } from "../../api/indianStatesApi";
+import styles from "../../css/IndianStates.module.css";
+import MoonLoading from "../utils/MoonLoader";
+import Line from "../graphs/Line";
 
 const GraphsList = ({ clicked }) => {
   const [area, setArea] = useState({});
@@ -51,10 +51,10 @@ const GraphsList = ({ clicked }) => {
               dataFeed={area.confirmed}
               ticks={16}
               tickValues={tickValues}
-              color={'#ff073a'}
+              color={"#ff073a"}
               bottom={30}
               angle={30}
-              theme={themeColor('#ff073a')}
+              theme={themeColor("#ff073a")}
             />
           </div>
         </div>
@@ -65,10 +65,10 @@ const GraphsList = ({ clicked }) => {
               dataFeed={area.active}
               ticks={16}
               tickValues={tickValues}
-              color={'#007bff'}
+              color={"#007bff"}
               bottom={30}
               angle={30}
-              theme={themeColor('#007bff')}
+              theme={themeColor("#007bff")}
             />
           </div>
         </div>
@@ -79,10 +79,10 @@ const GraphsList = ({ clicked }) => {
               dataFeed={area.deceased}
               ticks={16}
               tickValues={tickValues}
-              color={'#6c757d'}
+              color={"#6c757d"}
               bottom={30}
               angle={30}
-              theme={themeColor('#6c757d')}
+              theme={themeColor("#6c757d")}
             />
           </div>
         </div>
@@ -93,10 +93,10 @@ const GraphsList = ({ clicked }) => {
               dataFeed={area.recovered}
               ticks={16}
               tickValues={tickValues}
-              color={'#28a745'}
+              color={"#28a745"}
               bottom={30}
               angle={30}
-              theme={themeColor('#28a745')}
+              theme={themeColor("#28a745")}
             />
           </div>
         </div>

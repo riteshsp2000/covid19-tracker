@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import styles from '../../css/Cards.module.css';
-import Loader from '../utils/Loader';
-import Card from './Card';
+import styles from "../../css/Cards.module.css";
+import Loader from "../utils/Loader";
+import Card from "./Card";
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
@@ -12,7 +12,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   return (
     <div className={styles.container}>
       <Card
-        title='Confirmed'
+        title="Confirmed"
         time={2.5}
         value={confirmed.value}
         lastUpdate={lastUpdate}
@@ -20,7 +20,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
       />
 
       <Card
-        title='Recovered'
+        title="Recovered"
         time={2}
         value={recovered.value}
         lastUpdate={lastUpdate}
@@ -28,7 +28,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
       />
 
       <Card
-        title='Deceased'
+        title="Deceased"
         time={2}
         value={deaths.value}
         lastUpdate={lastUpdate}

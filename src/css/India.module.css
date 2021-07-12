@@ -5,9 +5,9 @@
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: 40rem;
   grid-gap: 2rem;
-  grid-template-areas: 
-  "news news overview overview overview overview"
-  "deepDive deepDive deepDive deepDive deepDive deepDive"
+  grid-template-areas:
+    "news news overview overview overview overview"
+    "deepDive deepDive deepDive deepDive deepDive deepDive";
 }
 
 .newsSection {
@@ -22,9 +22,9 @@
   grid-area: deepDive;
 }
 
-.box{
+.box {
   background: #fff;
-  box-shadow: 0px 4px 10px 4px rgb(0,0,0,0.14);
+  box-shadow: 0px 4px 10px 4px rgb(0, 0, 0, 0.14);
   text-align: center;
   border-radius: 10px;
 }
@@ -32,7 +32,7 @@
 .box h4 {
   margin: 5px;
   padding: 5px;
-  border-bottom: 2px solid #D0D0D0;
+  border-bottom: 2px solid #d0d0d0;
   font-size: 1.2rem;
   text-align: left;
 }
@@ -46,13 +46,11 @@
   height: 88%;
   overflow-x: hidden;
   overflow-y: auto;
-  
 }
-
 
 .update {
   background: #fff;
-  box-shadow: 0px 4px 10px 4px rgb(0,0,0,0.14);
+  box-shadow: 0px 4px 10px 4px rgb(0, 0, 0, 0.14);
   text-align: left;
   border-radius: 2px;
   padding: 0 16px;
@@ -78,10 +76,10 @@
 .newsContainer::-webkit-scrollbar {
   width: 6px;
   background-color: #fff;
-} 
+}
 
 .newsContainer::-webkit-scrollbar-thumb {
-  background-color:	#A8A8A8;
+  background-color: #a8a8a8;
   border-radius: 2px;
 }
 
@@ -111,14 +109,14 @@
 @media screen and (max-width: 660px) {
   .container {
     display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 40rem;
-  grid-gap: 1rem;
-  grid-template-areas: 
-  "news news news news"
-  "overview overview overview overview"
-  "deepDive deepDive deepDive deepDive"
-  "deepDive deepDive deepDive deepDive"
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 40rem;
+    grid-gap: 1rem;
+    grid-template-areas:
+      "news news news news"
+      "overview overview overview overview"
+      "deepDive deepDive deepDive deepDive"
+      "deepDive deepDive deepDive deepDive";
   }
 }
 
@@ -130,13 +128,12 @@
   justify-content: space-between;
 }
 
-
 /* =================================================== */
 
 .deepDiveTitle {
   margin: 10px;
   padding: 10px;
-  border-bottom: 2px solid #D0D0D0;
+  border-bottom: 2px solid #d0d0d0;
   font-size: 1.5rem;
   text-align: center;
 }
@@ -148,9 +145,9 @@
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 17rem;
   grid-gap: 1rem;
-  grid-template-areas: 
-  "first first second second"
-  "third third fourth fourth"
+  grid-template-areas:
+    "first first second second"
+    "third third fourth fourth";
 }
 
 @media screen and (max-width: 660px) {
@@ -159,11 +156,11 @@
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: 18rem;
     grid-gap: 1rem;
-    grid-template-areas: 
-    "first"
-    "second"
-    "third"
-    "fourth"
+    grid-template-areas:
+      "first"
+      "second"
+      "third"
+      "fourth";
   }
 }
 

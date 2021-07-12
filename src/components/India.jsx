@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import cx from 'classnames';
+import React, { useState } from "react";
+import cx from "classnames";
 
-import NewsSection from './indiaComponents/NewsSection';
-import IndiaOverview from './indiaComponents/IndiaOverview';
-import DeepDive from './indiaComponents/DeepDive';
+import NewsSection from "./indiaComponents/NewsSection";
+import IndiaOverview from "./indiaComponents/IndiaOverview";
+import DeepDive from "./indiaComponents/DeepDive";
 
-import styles from '../css/India.module.css';
-import ToggleSwitch from './utils/ToggleSwitch';
+import styles from "../css/India.module.css";
+import ToggleSwitch from "./utils/ToggleSwitch";
 
 const India = () => {
   // Initializing the data to Handle the toggle of total or daily data

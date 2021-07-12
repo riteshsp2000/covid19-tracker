@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from '../../css/IntroCard.module.css';
+import React from "react";
+import styles from "../../css/IntroCard.module.css";
 
 const IntroCard = () => {
   return (
@@ -19,8 +19,8 @@ const IntroCard = () => {
       </div>
       <div className={styles.imgDiv}>
         <img
-          src={require('../../img/fightcovid.png')}
-          alt='Social Distancing'
+          src={require("../../img/fightcovid.png")}
+          alt="Social Distancing"
         />
       </div>
     </div>

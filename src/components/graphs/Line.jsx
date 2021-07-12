@@ -1,5 +1,5 @@
-import React from 'react';
-import { ResponsiveLine } from '@nivo/line';
+import React from "react";
+import { ResponsiveLine } from "@nivo/line";
 
 const Line = ({
   dataFeed,
@@ -17,50 +17,50 @@ const Line = ({
       data={dataFeed}
       margin={{ top: 30, right: 35, bottom: bottom, left: 80 }}
       xScale={{
-        type: 'point',
-        min: 'auto',
-        max: 'auto',
+        type: "point",
+        min: "auto",
+        max: "auto",
         stacked: true,
         reverse: false,
       }}
       yScale={{
-        type: 'linear',
-        min: 'auto',
-        max: 'auto',
+        type: "linear",
+        min: "auto",
+        max: "auto",
         stacked: false,
         reverse: false,
       }}
-      curve='cardinal'
+      curve="cardinal"
       axisTop={null}
       axisRight={null}
       axisBottom={{
-        orient: 'bottom',
+        orient: "bottom",
         tickSize: 5,
         tickPadding: 5,
         tickRotation: angle,
         legend: legendX,
         legendOffset: 80,
-        legendPosition: 'middle',
+        legendPosition: "middle",
         ticks: ticks,
         tickValues: tickValues,
-        color: '#ff073a',
+        color: "#ff073a",
       }}
       axisLeft={{
-        orient: 'left',
+        orient: "left",
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
         legend: legendY,
         legendOffset: -75,
-        legendPosition: 'middle',
+        legendPosition: "middle",
       }}
       colors={color}
       lineWidth={3}
       pointSize={6}
-      pointColor={{ theme: 'background' }}
+      pointColor={{ theme: "background" }}
       pointBorderWidth={1}
-      pointBorderColor={{ from: 'serieColor' }}
-      pointLabel='y'
+      pointBorderColor={{ from: "serieColor" }}
+      pointLabel="y"
       pointLabelYOffset={-18}
       enablePointLabel={false}
       useMesh={true}
@@ -70,24 +70,24 @@ const Line = ({
       theme={theme}
       legends={[
         {
-          anchor: 'top',
-          direction: 'row',
+          anchor: "top",
+          direction: "row",
           justify: false,
           translateX: 0,
           translateY: -30,
           itemsSpacing: 0,
-          itemDirection: 'left-to-right',
+          itemDirection: "left-to-right",
           itemWidth: 80,
           itemHeight: 20,
           itemOpacity: 0.75,
           symbolSize: 12,
-          symbolShape: 'circle',
-          symbolBorderColor: 'rgba(0, 0, 0, .5)',
+          symbolShape: "circle",
+          symbolBorderColor: "rgba(0, 0, 0, .5)",
           effects: [
             {
-              on: 'hover',
+              on: "hover",
               style: {
-                itemBackground: 'rgba(0, 0, 0, .03)',
+                itemBackground: "rgba(0, 0, 0, .03)",
                 itemOpacity: 1,
               },
             },

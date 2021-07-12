@@ -1,8 +1,8 @@
-import React from 'react';
-import MoonLoader from 'react-spinners/MoonLoader';
-import { css } from '@emotion/core';
+import React from "react";
+import MoonLoader from "react-spinners/MoonLoader";
+import { css } from "@emotion/core";
 
-import styles from '../../css/Cards.module.css';
+import styles from "../../css/Cards.module.css";
 
 const override = css`
   display: block;
@@ -12,7 +12,7 @@ const override = css`
 const MoonLoading = ({ size }) => {
   return (
     <div className={styles.loader}>
-      <MoonLoader css={override} color={'#000000'} loading={true} size={size} />
+      <MoonLoader css={override} color={"#000000"} loading={true} size={size} />
     </div>
   );
 };

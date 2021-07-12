@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { fetchDistrictZones } from '../../api/indianStatesApi';
-import styles from '../../css/IndianStates.module.css';
-import MoonLoading from '../utils/MoonLoader';
+import { fetchDistrictZones } from "../../api/indianStatesApi";
+import styles from "../../css/IndianStates.module.css";
+import MoonLoading from "../utils/MoonLoader";
 
 const DistrictZones = ({ stateName }) => {
   const [zones, setZones] = useState({});

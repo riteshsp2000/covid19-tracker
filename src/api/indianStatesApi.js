@@ -1,14 +1,14 @@
-import { STATE_CODES } from '../constants';
+import { STATE_CODES } from "../constants";
 
-import axios from 'axios';
-import { startOfDay, parse, isBefore } from 'date-fns';
-import { utcToZonedTime } from 'date-fns-tz';
+import axios from "axios";
+import { startOfDay, parse, isBefore } from "date-fns";
+import { utcToZonedTime } from "date-fns-tz";
 
-const STATES_DATA = 'https://api.covid19india.org/data.json';
-const STATES_DAILY_DATA = 'https://api.covid19india.org/states_daily.json';
-const DISTRICT_ZONES = 'https://api.covid19india.org/zones.json';
+const STATES_DATA = "https://api.covid19india.org/data.json";
+const STATES_DAILY_DATA = "https://api.covid19india.org/states_daily.json";
+const DISTRICT_ZONES = "https://api.covid19india.org/zones.json";
 const DISTRICT_DATA =
-  'https://api.covid19india.org/v2/state_district_wise.json';
+  "https://api.covid19india.org/v2/state_district_wise.json";
 
 export const fetchStatesData = async () => {
   const {
@@ -21,14 +21,14 @@ export const fetchStatesData = async () => {
 };
 
 const getIndiaDay = () => {
-  return startOfDay(utcToZonedTime(new Date(), 'Asia/Kolkata'));
+  return startOfDay(utcToZonedTime(new Date(), "Asia/Kolkata"));
 };
 
 const convert = (str) => {
   var date = new Date(str),
-    mnth = ('0' + (date.getMonth() + 1)).slice(-2),
-    day = ('0' + date.getDate()).slice(-2);
-  return [mnth, day].join('-');
+    mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+    day = ("0" + date.getDate()).slice(-2);
+  return [mnth, day].join("-");
 };
 
 export const parseStateTimeseries = ({ states_daily: data }) => {
@@ -39,7 +39,7 @@ export const parseStateTimeseries = ({ states_daily: data }) => {
 
   const today = getIndiaDay();
   for (let i = 0; i < data.length; i += 3) {
-    const date = parse(data[i].date, 'dd-MMM-yy', new Date());
+    const date = parse(data[i].date, "dd-MMM-yy", new Date());
     // Skip data from the current day
     if (isBefore(date, today)) {
       Object.entries(statewiseSeries).forEach(([k, v]) => {
@@ -100,32 +100,32 @@ export const fetchStatesDailyData = async (stateName) => {
 
   const confirmed = [
     {
-      id: 'Confirmed',
-      color: 'hsl(101, 70%, 50%)',
+      id: "Confirmed",
+      color: "hsl(101, 70%, 50%)",
       data: confirmedData,
     },
   ];
 
   const active = [
     {
-      id: 'Active',
-      color: 'hsl(101, 70%, 50%)',
+      id: "Active",
+      color: "hsl(101, 70%, 50%)",
       data: activeData,
     },
   ];
 
   const deceased = [
     {
-      id: 'Deceased',
-      color: 'hsl(101, 70%, 50%)',
+      id: "Deceased",
+      color: "hsl(101, 70%, 50%)",
       data: deceasedData,
     },
   ];
 
   const recovered = [
     {
-      id: 'Recovered',
-      color: 'hsl(101, 70%, 50%)',
+      id: "Recovered",
+      color: "hsl(101, 70%, 50%)",
       data: recoveredData,
     },
   ];
@@ -180,13 +180,13 @@ export const fetchDistrictZones = async (stateName) => {
   zones.map(({ district, state, zone }) => {
     if (state === stateName) {
       switch (zone) {
-        case 'Green':
+        case "Green":
           green.push(district);
           break;
-        case 'Orange':
+        case "Orange":
           orange.push(district);
           break;
-        case 'Red':
+        case "Red":
           red.push(district);
           break;
         default:

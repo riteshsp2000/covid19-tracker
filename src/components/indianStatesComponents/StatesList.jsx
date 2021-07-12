@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { fetchStatesData } from '../../api/indianStatesApi';
-import MoonLoading from '../utils/MoonLoader';
-import styles from '../../css/IndianStates.module.css';
+import { fetchStatesData } from "../../api/indianStatesApi";
+import MoonLoading from "../utils/MoonLoader";
+import styles from "../../css/IndianStates.module.css";
 
 const StatesList = ({ handleStateSelected }) => {
   const [states, setStates] = useState([]);
-  const [selectedState, setSelectedState] = useState('');
+  const [selectedState, setSelectedState] = useState("");
 
   useEffect(() => {
     const fetchStatesApi = async () => {

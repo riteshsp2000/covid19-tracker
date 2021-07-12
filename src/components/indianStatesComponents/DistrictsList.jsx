@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { fetchDistrictsData } from '../../api/indianStatesApi';
-import styles from '../../css/IndianStates.module.css';
-import MoonLoading from '../utils/MoonLoader';
+import { fetchDistrictsData } from "../../api/indianStatesApi";
+import styles from "../../css/IndianStates.module.css";
+import MoonLoading from "../utils/MoonLoader";
 
 const DistrictsList = ({ stateName }) => {
   const [districtData, setDistrictData] = useState({});
-  const [windowWidth, setWindowWidth] = useState();
+  const [setWindowWidth] = useState();
 
   useEffect(() => {
     const fetchDistrictApi = async () => {
@@ -18,7 +18,7 @@ const DistrictsList = ({ stateName }) => {
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
-  }, []);
+  }, [setWindowWidth]);
 
   const renderDistrictsList = () => {
     return districtData.districtData.map(

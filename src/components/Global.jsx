@@ -1,14 +1,14 @@
-import React from 'react';
-import styles from '../css/Global.module.css';
+import React from "react";
+import styles from "../css/Global.module.css";
 
-import { Cards, Chart, CountryPicker, IntroCard } from './globalComponents';
-import { fetchData } from '../api';
+import { Cards, Chart, CountryPicker, IntroCard } from "./globalComponents";
+import { fetchData } from "../api";
 
 class Global extends React.Component {
   // Fetching the Global Count data when the component loads
   state = {
     data: {},
-    country: '',
+    country: "",
   };
 
   async componentDidMount() {
@@ -20,10 +20,10 @@ class Global extends React.Component {
 
   // Handler to manage and update the country when selected
   handleCountryChange = async (country) => {
-    if (country === 'global') {
+    if (country === "global") {
       const fetchedData = await fetchData();
 
-      this.setState({ data: fetchedData, country: '' });
+      this.setState({ data: fetchedData, country: "" });
     } else {
       const countryData = await fetchData(country);
 

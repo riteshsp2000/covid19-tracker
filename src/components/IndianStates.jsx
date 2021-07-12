@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import IndiaUpdate from './indianStatesComponents/IndiaUpdate';
-import StatesList from './indianStatesComponents/StatesList';
-import GraphsList from './indianStatesComponents/GraphsList';
-import DistrictsList from './indianStatesComponents/DistrictsList';
-import DistrictZones from './indianStatesComponents/DistrictZones';
+import IndiaUpdate from "./indianStatesComponents/IndiaUpdate";
+import StatesList from "./indianStatesComponents/StatesList";
+import GraphsList from "./indianStatesComponents/GraphsList";
+import DistrictsList from "./indianStatesComponents/DistrictsList";
+import DistrictZones from "./indianStatesComponents/DistrictZones";
 
-import styles from '../css/IndianStates.module.css';
+import styles from "../css/IndianStates.module.css";
 // import { fetchDistrictsData } from '../api/indianStatesApi';
 
 const IndianStates = () => {
-  const [clickedState, setClickedState] = useState('Maharashtra');
+  const [clickedState, setClickedState] = useState("Maharashtra");
 
   const handleStateSelected = (state) => {
     setClickedState(state);

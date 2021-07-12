@@ -1,7 +1,7 @@
-import React from 'react';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
-import styles from '../css/Helpline.module.css';
+import styles from "../css/Helpline.module.css";
 
 const Helpline = () => {
   return (
@@ -13,7 +13,7 @@ const Helpline = () => {
             <thead id={styles.tableHeading}>
               <tr>
                 <th>Sr.No</th>
-                <th className='state-col'>State</th>
+                <th className="state-col">State</th>
                 <th>Helpline Number</th>
               </tr>
             </thead>
@@ -23,9 +23,9 @@ const Helpline = () => {
                 <td>Andhra Pradesh</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:0866-2410978'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:0866-2410978"
                   >
                     0866-2410978
                   </a>
@@ -36,9 +36,9 @@ const Helpline = () => {
                 <td>Arunachal Pradesh</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:9536055743'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:9536055743"
                   >
                     9536055743
                   </a>
@@ -49,9 +49,9 @@ const Helpline = () => {
                 <td>Assam</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:6913347770'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:6913347770"
                   >
                     6913347770
                   </a>
@@ -61,7 +61,7 @@ const Helpline = () => {
                 <td>4</td>
                 <td>Bihar</td>
                 <td>
-                  <a target='_blank' rel='noopener noreferrer' href='tel:104'>
+                  <a target="_blank" rel="noopener noreferrer" href="tel:104">
                     104
                   </a>
                 </td>
@@ -71,9 +71,9 @@ const Helpline = () => {
                 <td>Chhattisgarh</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:077122-35091'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:077122-35091"
                   >
                     077122-35091
                   </a>
@@ -83,7 +83,7 @@ const Helpline = () => {
                 <td>6</td>
                 <td>Goa</td>
                 <td>
-                  <a target='_blank' rel='noopener noreferrer' href='tel:104'>
+                  <a target="_blank" rel="noopener noreferrer" href="tel:104">
                     104
                   </a>
                 </td>
@@ -92,7 +92,7 @@ const Helpline = () => {
                 <td>7</td>
                 <td>Gujarat</td>
                 <td>
-                  <a target='_blank' rel='noopener noreferrer' href='tel:104'>
+                  <a target="_blank" rel="noopener noreferrer" href="tel:104">
                     104
                   </a>
                 </td>
@@ -102,9 +102,9 @@ const Helpline = () => {
                 <td>Haryana</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:8558893911'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:8558893911"
                   >
                     8558893911
                   </a>
@@ -114,7 +114,7 @@ const Helpline = () => {
                 <td>9</td>
                 <td>Himachal Pradesh</td>
                 <td>
-                  <a target='_blank' rel='noopener noreferrer' href='tel:104'>
+                  <a target="_blank" rel="noopener noreferrer" href="tel:104">
                     104
                   </a>
                 </td>
@@ -123,7 +123,7 @@ const Helpline = () => {
                 <td>10</td>
                 <td>Jharkhand</td>
                 <td>
-                  <a target='_blank' rel='noopener noreferrer' href='tel:104'>
+                  <a target="_blank" rel="noopener noreferrer" href="tel:104">
                     104
                   </a>
                 </td>
@@ -132,7 +132,7 @@ const Helpline = () => {
                 <td>11</td>
                 <td>Karnataka</td>
                 <td>
-                  <a target='_blank' rel='noopener noreferrer' href='tel:104'>
+                  <a target="_blank" rel="noopener noreferrer" href="tel:104">
                     104
                   </a>
                 </td>
@@ -142,9 +142,9 @@ const Helpline = () => {
                 <td>Kerala</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:0471-2552056'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:0471-2552056"
                   >
                     0471-2552056
                   </a>
@@ -155,9 +155,9 @@ const Helpline = () => {
                 <td>Madhya Pradesh</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:0755-2527177'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:0755-2527177"
                   >
                     0755-2527177
                   </a>
@@ -168,9 +168,9 @@ const Helpline = () => {
                 <td>Maharashtra</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:020-26127394'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:020-26127394"
                   >
                     020-26127394
                   </a>
@@ -181,9 +181,9 @@ const Helpline = () => {
                 <td>Manipur</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:3852411668'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:3852411668"
                   >
                     3852411668
                   </a>
@@ -194,9 +194,9 @@ const Helpline = () => {
                 <td>Meghalaya</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:9366090748'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:9366090748"
                   >
                     9366090748
                   </a>
@@ -206,7 +206,7 @@ const Helpline = () => {
                 <td>17</td>
                 <td>Mizoram</td>
                 <td>
-                  <a target='_blank' rel='noopener noreferrer' href='tel:102'>
+                  <a target="_blank" rel="noopener noreferrer" href="tel:102">
                     102
                   </a>
                 </td>
@@ -216,9 +216,9 @@ const Helpline = () => {
                 <td>Nagaland</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:7005539653'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:7005539653"
                   >
                     7005539653
                   </a>
@@ -229,9 +229,9 @@ const Helpline = () => {
                 <td>Odisha</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:9439994859'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:9439994859"
                   >
                     9439994859
                   </a>
@@ -241,7 +241,7 @@ const Helpline = () => {
                 <td>20</td>
                 <td>Punjab</td>
                 <td>
-                  <a target='_blank' rel='noopener noreferrer' href='tel:104'>
+                  <a target="_blank" rel="noopener noreferrer" href="tel:104">
                     104
                   </a>
                 </td>
@@ -251,9 +251,9 @@ const Helpline = () => {
                 <td>Rajasthan</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:0141-2225624'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:0141-2225624"
                   >
                     0141-2225624
                   </a>
@@ -263,7 +263,7 @@ const Helpline = () => {
                 <td>22</td>
                 <td>Sikkim</td>
                 <td>
-                  <a target='_blank' rel='noopener noreferrer' href='tel:104'>
+                  <a target="_blank" rel="noopener noreferrer" href="tel:104">
                     104
                   </a>
                 </td>
@@ -273,9 +273,9 @@ const Helpline = () => {
                 <td>Tamil Nadu</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:044-29510500'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:044-29510500"
                   >
                     044-29510500
                   </a>
@@ -285,7 +285,7 @@ const Helpline = () => {
                 <td>24</td>
                 <td>Telangana</td>
                 <td>
-                  <a target='_blank' rel='noopener noreferrer' href='tel:104'>
+                  <a target="_blank" rel="noopener noreferrer" href="tel:104">
                     104
                   </a>
                 </td>
@@ -295,9 +295,9 @@ const Helpline = () => {
                 <td>Tripura</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:0381-2315879'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:0381-2315879"
                   >
                     0381-2315879
                   </a>
@@ -307,7 +307,7 @@ const Helpline = () => {
                 <td>26</td>
                 <td>Uttarakhand</td>
                 <td>
-                  <a target='_blank' rel='noopener noreferrer' href='tel:104'>
+                  <a target="_blank" rel="noopener noreferrer" href="tel:104">
                     104
                   </a>
                 </td>
@@ -317,9 +317,9 @@ const Helpline = () => {
                 <td>Uttar Pradesh</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:18001805145'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:18001805145"
                   >
                     18001805145
                   </a>
@@ -330,9 +330,9 @@ const Helpline = () => {
                 <td>West Bengal</td>
                 <td>
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='tel:3323412600'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="tel:3323412600"
                   >
                     3323412600
                   </a>
@@ -345,7 +345,7 @@ const Helpline = () => {
             <thead id={styles.tableHeading2}>
               <tr>
                 <th>Sr.No</th>
-                <th className='state-col'>Union Territory</th>
+                <th className="state-col">Union Territory</th>
                 <th>Helpline Number</th>
               </tr>
             </thead>
@@ -355,9 +355,9 @@ const Helpline = () => {
                 <td>Andaman and Nicobar Islands</td>
                 <td>
                   <a
-                    rel='noopener noreferrer'
-                    target='_blank'
-                    href='tel:03192-232102'
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="tel:03192-232102"
                   >
                     03192-232102
                   </a>
@@ -368,9 +368,9 @@ const Helpline = () => {
                 <td>Chandigarh</td>
                 <td>
                   <a
-                    rel='noopener noreferrer'
-                    target='_blank'
-                    href='tel:9779558282'
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="tel:9779558282"
                   >
                     9779558282
                   </a>
@@ -380,7 +380,7 @@ const Helpline = () => {
                 <td>3</td>
                 <td>Dadra and Nagar Haveli and Daman &amp; Diu</td>
                 <td>
-                  <a rel='noopener noreferrer' target='_blank' href='tel:104'>
+                  <a rel="noopener noreferrer" target="_blank" href="tel:104">
                     104
                   </a>
                 </td>
@@ -390,9 +390,9 @@ const Helpline = () => {
                 <td>Delhi</td>
                 <td>
                   <a
-                    rel='noopener noreferrer'
-                    target='_blank'
-                    href='tel:011-22307145'
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="tel:011-22307145"
                   >
                     011-22307145
                   </a>
@@ -403,9 +403,9 @@ const Helpline = () => {
                 <td>Jammu &amp; Kashmir</td>
                 <td>
                   <a
-                    rel='noopener noreferrer'
-                    target='_blank'
-                    href='tel:1912520982'
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="tel:1912520982"
                   >
                     1912520982
                   </a>
@@ -413,9 +413,9 @@ const Helpline = () => {
                     <br />
                   </span>
                   <a
-                    rel='noopener noreferrer'
-                    target='_blank'
-                    href='tel:0194-2440283'
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="tel:0194-2440283"
                   >
                     0194-2440283
                   </a>
@@ -426,9 +426,9 @@ const Helpline = () => {
                 <td>Ladakh</td>
                 <td>
                   <a
-                    rel='noopener noreferrer'
-                    target='_blank'
-                    href='tel:1982256462'
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="tel:1982256462"
                   >
                     1982256462
                   </a>
@@ -439,9 +439,9 @@ const Helpline = () => {
                 <td>Lakshadweep</td>
                 <td>
                   <a
-                    rel='noopener noreferrer'
-                    target='_blank'
-                    href='tel:4896263742'
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="tel:4896263742"
                   >
                     4896263742
                   </a>
@@ -451,7 +451,7 @@ const Helpline = () => {
                 <td>8</td>
                 <td>Puducherry</td>
                 <td>
-                  <a rel='noopener noreferrer' target='_blank' href='tel:104'>
+                  <a rel="noopener noreferrer" target="_blank" href="tel:104">
                     104
                   </a>
                 </td>
@@ -466,29 +466,29 @@ const Helpline = () => {
         <div className={styles.nationalDetailsDiv}>
           <div className={styles.alignment}>
             <h3>Helpline no (Toll Free)</h3>
-            <a href='tel:+91-11-23978046'>+91-11-23978046</a>
+            <a href="tel:+91-11-23978046">+91-11-23978046</a>
           </div>
 
           <div className={styles.alignment}>
             <h3>Helpline Email</h3>
-            <a href='mailto:ncov2019@gov.in'>ncov2019@gov.in</a>
-            <a href='mailto:ncov2019@gmail.com'>ncov2019@gmail.com</a>
+            <a href="mailto:ncov2019@gov.in">ncov2019@gov.in</a>
+            <a href="mailto:ncov2019@gmail.com">ncov2019@gmail.com</a>
           </div>
 
           <div>
             <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://twitter.com/MoHFW_INDIA'
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/MoHFW_INDIA"
             >
-              <i className='fab fa-twitter fa-2x' id={styles.twitter}></i>
+              <i className="fab fa-twitter fa-2x" id={styles.twitter}></i>
             </a>
             <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://www.facebook.com/MoHFWIndia'
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/MoHFWIndia"
             >
-              <i className='fab fa-facebook fa-2x' id={styles.facebook}></i>
+              <i className="fab fa-facebook fa-2x" id={styles.facebook}></i>
             </a>
           </div>
         </div>
@@ -496,13 +496,13 @@ const Helpline = () => {
 
       <div className={styles.links}>
         <h2>Helpful Links</h2>
-        <ul className={styles.helpLinks} id='helpLineID'>
+        <ul className={styles.helpLinks} id="helpLineID">
           <li>
             <div className={styles.overflowLinksDiv}>
               <p>
                 HELPLINE NUMBERS (by State)
                 <br />
-                <a href='https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf'>
+                <a href="https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf">
                   https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf
                 </a>
               </p>
@@ -513,7 +513,7 @@ const Helpline = () => {
               <p>
                 Ministry of Health and Family Welfare, Gov. of India
                 <br />
-                <a href='https://www.mohfw.gov.in/'>
+                <a href="https://www.mohfw.gov.in/">
                   https://www.mohfw.gov.in/
                 </a>
               </p>
@@ -524,7 +524,7 @@ const Helpline = () => {
               <p>
                 Twitter updates by Press Information Bureau
                 <br />
-                <a href='https://twitter.com/PIB_India'>
+                <a href="https://twitter.com/PIB_India">
                   https://twitter.com/PIB_India
                 </a>
               </p>
@@ -535,7 +535,7 @@ const Helpline = () => {
               <p>
                 WHO : COVID-19 Guidelines
                 <br />
-                <a href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019'>
+                <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">
                   https://www.who.int/emergencies/diseases/novel-coronavirus-2019
                 </a>
               </p>
@@ -546,7 +546,7 @@ const Helpline = () => {
               <p>
                 CDC
                 <br />
-                <a href='https://www.cdc.gov/coronavirus/2019-ncov/faq.html'>
+                <a href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html">
                   https://www.cdc.gov/coronavirus/2019-ncov/faq.html
                 </a>
               </p>
@@ -557,7 +557,7 @@ const Helpline = () => {
               <p>
                 Myth Busters By WHO
                 <br />
-                <a href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters'>
+                <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters">
                   https://www.who.int/emergencies/diseases/
                   novel-coronavirus-2019/advice-for-public/myth-busters
                 </a>
